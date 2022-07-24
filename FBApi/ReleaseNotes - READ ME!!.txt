@@ -1,0 +1,372 @@
+﻿/*
+ * changes in 8.0.2.2:
+ * fixed the 'namegender' bug in the previous fix
+ */
+
+/*
+ * changes in 8.0.2.1:
+ * Removed the "is_verified" field from the load options of User
+ */
+
+/*
+ * changes in 8.0.2.0:
+ * Modified LoadOptions of Page and Group to resolve retrieve bug
+ */
+
+/*
+ changes in 8.0.0.1:
+ * Making User [Serializable] (alongside with PicturesColleciton, JsonObject, JsonArray, and FacebookObjectCollection)
+ */
+
+/*
+ changes in 8.0.0.0:
+
+ * using Chromium browser instead of IE
+
+ * Addded a Logout feature to display www.facebook.com page to allow manual logout
+
+ * Added dummy values for demo version
+
+USER:
+ * Added user::ShortName
+ * Added user::FavofriteTeams
+ * Added set methods for user properties
+
+ * Remove the 'tags' and 'name_tags' field from the user sr_FieldsToLoad
+ * Removed the 'viewer_can_send_gift' field from the user sr_FieldsToLoadV800
+ * Removed the 'security_settings' field from the user sr_FieldsToLoadV800
+ * Removed the 'security_settings' field from the user sr_FieldsToLoadV800
+
+EVENT:
+ * Added event::Cover
+ * Added event::AttendingCount
+ * Added event::DeclinedCount
+ * Added event::InterestedCount
+ * Added event::MaybeCount
+ * Added event::NoReplyCount
+ * Added event::IsOnline
+ * Added event::discount_code_enabled
+ * Added event::Timezone
+ * Added event::TicketsURI
+ * Added event::Location
+
+ * event::Location and event::Venue return event::Place
+ */
+
+/*
+ changes in 6.8.0.18:
+ * Removed the 'context' field from the user sr_FieldsToLoadV330
+ */
+
+/*
+ changes in 6.8.0.17:
+ * Added User::About (used to be Bio)
+ * fixed a bug related to default version and the bio field
+ * User::Groups now returns the groups admined by the user 
+ */
+
+/*
+ changes in 6.8.0.16:
+ * Added User::WorkExperiences (a collection of WorkExperience objects)
+ * default api version is now 2.11
+ */
+
+/*
+ changes in 6.8.0.15:
+ * removed 'bio' field from User (depcrated in v2.8);
+ * default api version is now 2.8
+ * LoginResult.ErrorMessage is now emtpy when all is good :)
+ */
+
+/*
+ changes in 6.8.0.14:
+ * FacebookService::GetDynamicData returns dynamic object with the parsed JSON data
+ * FacebookService::GetObject returns dynamic object with the parsed JSON data
+ * Photo::FieldsToLoad now include 'tags' to load the tagged users
+ * LoginResult now contains FacebookOAuthResult
+ * OwnerObject::CreateEvent_DeprecatedSinceV2
+ */
+
+/*
+ changes in 6.8.0.13:
+ * All Profile Pictures handling now moved up to OwnerObject class (base class of User and Page)
+ * - PictureXxxUrl properties and ImageXxx Properties are now available on Page objects too
+ * - Fixed: Page::PictureURL was broken. Now returns PictureNormalUrl
+ */
+
+/*
+ changes in 6.8.0.12:
+ * Checkin now derives from Post and not from GeoPostedItem
+ * Added Post::TaggedUsers (Gets the users that the author tagged in the post with '@')
+ * Added Post::WithUsers (Gets the users that the author tagged as being 'with' the publisher of the post)
+ * FacebookObject::ReFetch now takes eLoadOptions as parameter or string i_FieldsToLoad as parameter
+ */
+
+/*
+ changes in 6.8.0.11:
+ * Fixed: PostedItem::Delete didn't work ("Error findind the requested story") because of old id format ({ownerID}_{postID}).
+ * Added: User::Cover
+ */
+
+/*
+ changes in 6.8.0.10:
+ * Fixed: Added ?summary=true to PostedItem::Likes and PostedItem::Comments.
+ * Fixed: PostedItem::LikedBy did'nt work (request included wrong fields)
+ */
+
+/*
+ changes in 6.8.0.9:
+ * Mainly: Changes to support v2.4 of FB Graph API (see: https://developers.facebook.com/docs/apps/changelog#v2_4_deprecations)
+ *      -- Explicit eLoadOptions.Full for collections to overcome this change: https://developers.facebook.com/docs/apps/changelog#v2_4_deprecations
+ * 	-- Removed User::Pokes (deprecated in v.24)
+ * 	-- Removed Event::Invited (deprecated in v.24) (use Event
+ * 	-- Removed User::InboxThreads (deprecated in v.24)
+ * 	-- Removed Event::Privacy (deprecated in v.24)
+ *	-- Removed User::Groups (deprecated in v.24)
+ * Added: User:LikedPages
+ * Fixed: Login form expanded and improved
+ */
+
+/*
+ changes in 6.8.0.8:
+ * Fixed: GeoPostedItem::Place is now a Page object (instead of a 'Place' object).
+ */
+
+/*
+ changes in 6.8.0.7:
+ * Fixed: In api v2.3, the return value of the some methodsis not a boolean but rather a { succuss: bool }.
+ */
+
+/*
+ changes in 6.8.0.6:
+ * Fixed: fetching events since FBAPI V2.3 includes a 'place' field instead of 'location' and 'venue' fields
+ * Fixed: Respond on event throws: Cannot convert type 'Facebook.JsonObject' to 'bool'
+ * Added: PostedItem::Delete() (a method for deleting a post from facebook: https://developers.facebook.com/docs/graph-api/reference/v2.3/post#deleting
+*/
+
+/*
+ changes in 6.8.0.5:
+ * Fixed: On some photo tags, tagged users didn't contain an Id. Now returning an empty string instead of throwing a RuntimeBinderException
+ * Fixed: Couldn't tag friends in a post without tagging a place. Resolved by tagging a fake place: 155021662189 (See http://codenigeria.com/discussion/245/facebook-api-how-to-make-status-update-on-facebook-but-also-tag-some-facebook-friends-in-it-/p1)
+*/
+
+/*
+ changes in 6.8.0.4:
+ * Added a user::PostStatus method that allows you to post on the user's wall, including tagging friends in the post, adding a location to the post, and so on..
+*/
+
+/*
+ changes in 6.8.0.3:
+ * Fixed: checkin::TaggedUsers was throwing an exception (changed from m_DynamicData.tags to m_DynamicData.tags.data);
+*/
+
+/*
+ changes in 6.8.0.2:
+ * Added an 'Album' property to a 'Photo' object
+ * Fixed a bug: "description" was declared more then once when fetching an 'Event' object, which caused an error starting v2.2
+*/
+
+/*
+ changes in 6.8.0.1:
+ * Added support for user's education history (loggedInUser.Educations is a collection of FacebookWrapper.ObjectModel.Education objects)
+ * Added support for user's attending/not_yet_replied/created/declined/maybe events (loggedInUser.Events / .EventsCreated / .EventsDeclined / .EventsMaybe / .EventsNotYetReplied)
+*/
+
+/*
+ changes in 6.8.0.0:
+ * Using Facebook.dll version 6.8.0.0
+*/
+
+/*
+ changes in 6.2.1.13:
+ * Bug fix: when fetching objects using FQL, the uid was not reflected by the obj.id property. (modified the FacebookObject::Id {get;} method to fetch both dynamicData.id and dynamicData.uid
+*/
+
+/*
+ changes in 6.2.1.12:
+ * loading the friends of the loggedin user with 'full' load option (including 'hometown' etc.
+*/
+
+/*
+ changes in 6.2.1.11:
+ * Bug fix (in v2.0 apps): User::ReFetch throws an exception (due to unknown field 'username')
+*/
+
+/*
+ changes in 6.2.1.10:
+ * Bug fix: fetching the groups that the logged-in user is member of (didn't work due to unkown field 'version'
+*/
+
+/*
+ changes in 6.2.1.9:
+ * Perfomance improvements (fixed an issue that caused fetching each object twice :/ )
+ *      and some refactoring
+ *      Fetching 87 friends took: 17.1699973 seconds (before fix), Fetching 87 friends took: 1.40293 seconds (after fix)
+ *
+ * Added [Browsable(false)] on selective properties for DataBinding demo
+*/
+
+/*
+ changes in 6.2.1.8:
+ * Fixed PicturesColleciton::GetPictureUrl method to include access_token in the request.
+ *    Now properties like album.Photos[0].ImageNormal should work..
+ *    
+ * Added Event::InviteUsers(IEnumerable<User> i_UsersToInvite)
+ * 
+ * Fixed User::CreateEvent method (i_PrivaceType paramter did not work)
+ * 
+ * User::Locatiom and USer::Hometown properties are now fully loaded (a fully loaded City object)
+ * 
+ * Added a FacebookObject::ReFetch() method. USe it to re-fetch the data of an object from facebook, if needed
+ * 
+ * Added a FacebookService::Logout() method (can be used only after the application has a valid access_token
+*/
+
+/*
+ changes in 6.2.1.7:
+ * Fixed the Post::LikedBy property (did'nt work) and removed the Post::LikesCount property (didn't work)
+ * (both bugs were due to recent changes in FB API..)
+*/
+
+/*
+ changes in 6.2.1.6:
+ * Made Location.Longitute and Location.Latitude a double? (nullable) instead of double, to support locations with no lat/long data.
+*/
+
+/*
+ changes in 6.2.1.5:
+ * Added a GeoPostedItem base class (derived from PosteItem) for posts that have a 'Place' property (Post,Status,Checkin,Photo)
+*/
+
+/*
+ changes in 6.2.1.4:
+ * Fixed the bug in User::CreateEvent method. time formmating did not include offset from UTC. not it does :)
+ * 
+*/
+
+/*
+ changes in 6.2.1.3:
+ * Fixed the bug in User::createOrPost method when posting a post with a returned data in the format of PostingUserID_PostID
+ * Fixed a small bug in Post::LikesCount (checking if m_DynamicData.likes.count != null)
+ * 
+*/
+
+/*
+ changes in 6.2.1.2:
+* Added support for privacy settings when posting status/link/photo.
+*  <param name="i_PrivacyParameterValue">a string representing the privacy parameter value.
+*   Must be in the "{'value': 'CUSTOM|EVERYONE|SELF|ALL_FRIENDS|FRIEND_OF_FRIENDS', 'allow': '{friend-list-id1},{friend-list-id2},{friend-id1},{friend-id2}', 'deny': 'friend-list-id1,friend-list-id2,friend-id1,friend-id2'}
+*   NOTE: allow/deny lists are only allowed when 'value' is set top 'CUSTOM'
+*   see detalis here: https://developers.facebook.com/docs/reference/api/privacy-parameter 
+*  </param>
+*/
+
+/*
+ changes in 6.2.1.1:
+* using Facebook-Net40 v "6.2.1-beta
+* 
+* Added FacebookService.GetCollectionByFQL<T>(string i_FqlPredicate, string i_Fields)
+*     i.e:
+*     var friends = FacebookService.GetCollectionByFQL<FacebookWrapper.ObjectModel.User>(
+*                            "uid IN (SELECT uid1 FROM friend WHERE uid2 = me())", "name, online_presence");
+*                            
+*     var albums = FacebookService.GetCollectionByFQL<FacebookWrapper.ObjectModel.Album>(
+*                            "strpos(name,'Thailand')>=0 AND owner IN (SELECT uid1 FROM friend WHERE uid2 = me())",
+*                            "aid, owner, name, description");
+*                            
+* Added  FacebookService.GetObjectByFQL<T>((string i_FqlPredicate, string i_Fields)
+*      var friend = FacebookService.GetObjectByFQL<FacebookWrapper.ObjectModel.User>(
+*                            "username = 'tomerroznek'", "uid, name, first_name, last_name, online_presence");
+*                            
+* Added a Venue property to Event
+* 
+* Added an OnlineStatus property to User (fetched only via FQL: "uid, name, online_presence, ...")
+*
+* fixed the start_time / end_time bug:
+*   After the 'Events Timezone' migration, all event times are ISO-8601 formatted strings;
+*   they can no longer be specified as timestamps. The following formats are accepted:
+*   Date-only (e.g., '2012-07-04'): events that have a date but no specific time yet.
+*   Precise-time (e.g., '2012-07-04T19:00:00-0700'): events that start at a particular point in time,
+*   in a specific offset from UTC.
+*   This is the way new Facebook events keep track of time, and allows users to view events in different timezones.
+*   
+* Added User::Checkin(Checkin i_Checkin) that allows the app to perform a checkin on behalf of the user
+*/
+
+/*
+ changes in 1.10:
+ * added FULL support for groups (m_LoggedInUser.Groups)
+ * fixed User.Link bug (changed get{return m_DynamicData.Link;} to get{return m_DynamicData.link;} )
+ * renamed http:// to https:// in documentation headers
+ * fixed all XML documentation headers
+*/
+
+/*
+ changes in 1.9:
+ * fixed the bug in User::CreateEvent method which didn't set the description of the event properly. { "description", i_Description}
+ * fixed the documentation of User::CreateAlbum method (permission)
+*/
+
+/*
+ changes in 1.8:
+ * Added FULL support for friend lists (create, add friend, remove friend, delete list)
+ * Added setters to User.Bio, Event.Description for binding demo
+ * PhotoTag.XCoord and PhotoTag.XCoord are now doubles (instead of float)
+*/
+
+/*
+ changes in 1.7:
+ * Added FULL support for pages (this includes user.Languages, and the support for FULL Music/Books/Movies/Games/Television page objects)
+ * FacebookService.s_CollectionLimit
+ * FacebookService.s_UseForamttedToStrings
+*/
+
+/*
+ changes in 1.6:
+ * Added support for the "Arts and Entertainment" section in the user's info tab (user's favorites music/books/movies/games/television)
+ * use FacebookService.GetCollection method(s) and pass the relevant connection string ("music"/"books"/"movies"/"games"/"television")
+ * to get a FacebookObjectCollection<PageBase> in return, containing the basic information (Id, Name, Category, CreatedTime)
+*/
+
+/*
+ changes in 1.5:
+ * GetCollecitonAsync now accepts a more conmpact delegate declaration
+*/
+
+
+/*
+ changes in 1.4:
+ * The Pictures collection of User, Event, Photo, User is now implemented
+ * (accepting a string indexer of SizeType)
+ * The User.ImageSmall, User.ImageLarge, User.ImageNormal, User.ImageSmall, User.ImageSquare properties are now implemented
+ * (each returning a System.Drawing.Image object)
+ * GetObjectAsync, GetCollecitonAsync
+ * Overall performance improvements
+*/
+
+/*
+ changes in 1.3:
+ * Fixed CreateEvent method (didn't work)
+ * Implemented the Event.Respond method
+*/
+
+/*
+ changes in 1.2:
+ * Added User.Location and User.Hometown properties
+ * Fixed XCoord/YCoord casting (double to float) exception
+*/
+
+/*
+changes in 1.1:
+ * A new FacebookService.Connect method for offline_access support
+ * A new FacebookService.GetObject<T>(string i_ID, string i_Fields = "")
+ * A new FacebookService.GetCollection<T>(string i_Connection, string i_ParentID = "me", string i_Fields = "", int i_Limit = 25, DynamicWrapper.eLoadOptions i_LoadOptions = DynamicWrapper.eLoadOptions.Full)
+ *  for example: FacebookObjectCollection<Post> statuses = FacebookService.GetCollection<Photo>(i_Connection: "statuses", i_ParentID: "me", i_Limit: 100)
+ *  returns the recent 100 status posts
+ * Some new porperties in Album object:
+ *  Album.CoverPhoto
+ *  Album.CoverPhotoLargeURL
+ *  Album.CoverPhotoThumbURL
+ * Checkin.ToString()'s new format:
+ *  "Checked in at {0} (on {1} by {2})", this.Place.Name, this.CreatedTime, this.From.Name);
+*/
