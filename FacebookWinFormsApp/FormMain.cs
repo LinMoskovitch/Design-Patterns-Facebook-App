@@ -31,8 +31,10 @@ namespace BasicFacebookFeatures
                     "public_profile"
                     /// add any relevant permissions
                     );
-
-            buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}";
+            if(loginResult.AccessToken != null)
+            {
+                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}";
+            }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
