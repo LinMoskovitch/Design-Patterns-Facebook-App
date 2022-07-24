@@ -19,7 +19,8 @@ namespace BasicFacebookFeatures
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
 
-        private User m_TheLoggedInUser { get; set; }
+        private User TheLoggedInUser { get; set; }
+        private UserControlPostsDisplay UserControlPostsDisplay { }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -35,10 +36,11 @@ namespace BasicFacebookFeatures
                     );
             if(loginResult.AccessToken != null)
             {
-                m_TheLoggedInUser = loginResult.LoggedInUser;
-                buttonLogin.Text = $"Logged in as {m_TheLoggedInUser.Name}";
+                TheLoggedInUser = loginResult.LoggedInUser;
+                buttonLogin.Text = $"Logged in as {TheLoggedInUser.Name}";
                 pictureBoxProfilePicture.Visible = true;
-                pictureBoxProfilePicture.Image = m_TheLoggedInUser.ImageNormal;
+                pictureBoxProfilePicture.Image = TheLoggedInUser.ImageNormal;
+                labelFullName.Text = TheLoggedInUser.Name;
             }
         }
 
@@ -46,6 +48,23 @@ namespace BasicFacebookFeatures
         {
 			FacebookService.LogoutWithUI();
 			buttonLogin.Text = "Login";
-		}
+            TheLoggedInUser = null;
+            pictureBoxProfilePicture.Visible = false;
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxProfilePicture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPosts_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
