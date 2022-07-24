@@ -20,7 +20,6 @@ namespace BasicFacebookFeatures
         }
 
         private User TheLoggedInUser { get; set; }
-        private UserControlPostsDisplay UserControlPostsDisplay { }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -64,7 +63,10 @@ namespace BasicFacebookFeatures
 
         private void buttonPosts_Click(object sender, EventArgs e)
         {
-            
+            UserControlPostsDisplay postsDisplayControl = new UserControlPostsDisplay();
+
+            panelChosenOptionDisplay.Controls.Add(postsDisplayControl);
+            postsDisplayControl.Show();
         }
     }
 }
