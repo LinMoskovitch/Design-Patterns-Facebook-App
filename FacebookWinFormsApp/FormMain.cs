@@ -19,6 +19,8 @@ namespace BasicFacebookFeatures
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
 
+        private User m_TheLoggedInUser { get; set; }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Clipboard.SetText("design.patterns20cc"); /// the current password for Desig Patter
@@ -33,7 +35,10 @@ namespace BasicFacebookFeatures
                     );
             if(loginResult.AccessToken != null)
             {
-                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}";
+                m_TheLoggedInUser = loginResult.LoggedInUser;
+                buttonLogin.Text = $"Logged in as {m_TheLoggedInUser.Name}";
+                pictureBoxProfilePicture.Visible = true;
+                pictureBoxProfilePicture.Image = m_TheLoggedInUser.ImageNormal;
             }
         }
 
@@ -42,5 +47,5 @@ namespace BasicFacebookFeatures
 			FacebookService.LogoutWithUI();
 			buttonLogin.Text = "Login";
 		}
-	}
+    }
 }
