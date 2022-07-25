@@ -29,9 +29,9 @@ namespace BasicFacebookFeatures.Forms
         private void fetchEvents()
         {
             listBoxEventsList.Items.Clear();
-            foreach(Album userAlbum in r_LoggedInUser.Albums)
+            foreach(Event userEvent in r_LoggedInUser.Events)
             {
-                listBoxEventsList.Items.Add(userAlbum);
+                listBoxEventsList.Items.Add(userEvent);
             }
 
             if(listBoxEventsList.Items.Count == 0)
@@ -40,13 +40,13 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void listBoxAlbumsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        private void listBoxEventsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        {
+            if (listBoxEventsList.Items.Count != 0)
             {
-                if (listBoxEventsList.Items.Count != 0)
-                {
-                    pictureBoxEventsCoverPhoto.LoadAsync((listBoxEventsList.SelectedItem as Album)?.PictureAlbumURL);
-                }
+                pictureBoxEventsCoverPhoto.LoadAsync((listBoxEventsList.SelectedItem as Event)?.Cover.SourceURL);
             }
         }
+    }
     }
 

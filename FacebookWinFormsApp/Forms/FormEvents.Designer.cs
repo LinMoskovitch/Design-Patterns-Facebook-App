@@ -45,6 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxEventsList.Name = "listBoxEventsList";
             this.listBoxEventsList.Size = new System.Drawing.Size(507, 454);
             this.listBoxEventsList.TabIndex = 3;
+            this.listBoxEventsList.SelectedValueChanged += new System.EventHandler(this.listBoxEventsList_SelectedValueChanged);
             // 
             // pictureBoxEventsCoverPhoto
             // 
