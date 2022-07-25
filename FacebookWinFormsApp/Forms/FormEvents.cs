@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormEvents : Form
     {
-        public FormEvents()
+        public FormEvents(User i_LoggedInUser)
         {
             InitializeComponent();
         }

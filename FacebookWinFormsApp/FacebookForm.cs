@@ -113,32 +113,32 @@ namespace BasicFacebookFeatures
 
         private void buttonAlbums_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormAlbums(), i_Sender);
+            openChildForm(new Forms.FormAlbums(m_LoggedInUser), i_Sender);
         }
 
         private void buttonGroups_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormGroups(), i_Sender);
+            openChildForm(new Forms.FormGroups(m_LoggedInUser), i_Sender);
         }
 
         private void buttonPages_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormPages(), i_Sender);
+            openChildForm(new Forms.FormPages(m_LoggedInUser), i_Sender);
         }
 
         private void buttonEvents_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormEvents(), i_Sender);
+            openChildForm(new Forms.FormEvents(m_LoggedInUser), i_Sender);
         }
 
         private void buttonFeature1_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormFeature1(), i_Sender);
+            openChildForm(new Forms.FormFeature1(m_LoggedInUser), i_Sender);
         }
 
         private void buttonFeature2_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormFeature2(), i_Sender);
+            openChildForm(new Forms.FormFeature2(m_LoggedInUser), i_Sender);
         }
     }
 }
