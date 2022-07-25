@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacebookForm));
             this.panelUserInfo = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelPicture = new System.Windows.Forms.Panel();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.labelTitleBar = new System.Windows.Forms.Label();
+            this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonFeature2 = new System.Windows.Forms.Button();
             this.buttonFeature1 = new System.Windows.Forms.Button();
@@ -40,11 +44,8 @@
             this.buttonAlbums = new System.Windows.Forms.Button();
             this.buttonUserInfo = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.panelPicture = new System.Windows.Forms.Panel();
-            this.pictureBoxProfiePicture = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
-            this.panelPicture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfiePicture)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelUserInfo
@@ -73,6 +74,46 @@
             this.panelMenu.Size = new System.Drawing.Size(280, 1055);
             this.panelMenu.TabIndex = 60;
             // 
+            // panelPicture
+            // 
+            this.panelPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelPicture.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPicture.Location = new System.Drawing.Point(0, 0);
+            this.panelPicture.Name = "panelPicture";
+            this.panelPicture.Size = new System.Drawing.Size(280, 80);
+            this.panelPicture.TabIndex = 0;
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.labelTitleBar);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(280, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(1404, 80);
+            this.panelTitleBar.TabIndex = 61;
+            // 
+            // labelTitleBar
+            // 
+            this.labelTitleBar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTitleBar.AutoSize = true;
+            this.labelTitleBar.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleBar.ForeColor = System.Drawing.Color.White;
+            this.labelTitleBar.Location = new System.Drawing.Point(635, 9);
+            this.labelTitleBar.Name = "labelTitleBar";
+            this.labelTitleBar.Size = new System.Drawing.Size(159, 57);
+            this.labelTitleBar.TabIndex = 0;
+            this.labelTitleBar.Text = "HOME";
+            this.labelTitleBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelDesktopPanel
+            // 
+            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPanel.Location = new System.Drawing.Point(280, 80);
+            this.panelDesktopPanel.Name = "panelDesktopPanel";
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1404, 975);
+            this.panelDesktopPanel.TabIndex = 62;
+            // 
             // buttonLogout
             // 
             this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,7 +124,7 @@
             this.buttonLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLogout.Image = global::BasicFacebookFeatures.Properties.Resources.logout_32;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.Location = new System.Drawing.Point(0, 852);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 720);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(280, 80);
@@ -104,7 +145,7 @@
             this.buttonFeature2.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonFeature2.Image = global::BasicFacebookFeatures.Properties.Resources.events_32;
             this.buttonFeature2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFeature2.Location = new System.Drawing.Point(0, 772);
+            this.buttonFeature2.Location = new System.Drawing.Point(0, 640);
             this.buttonFeature2.Name = "buttonFeature2";
             this.buttonFeature2.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonFeature2.Size = new System.Drawing.Size(280, 80);
@@ -113,6 +154,7 @@
             this.buttonFeature2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonFeature2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFeature2.UseVisualStyleBackColor = true;
+            this.buttonFeature2.Click += new System.EventHandler(this.buttonFeature2_Click);
             // 
             // buttonFeature1
             // 
@@ -124,7 +166,7 @@
             this.buttonFeature1.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonFeature1.Image = global::BasicFacebookFeatures.Properties.Resources.events_32;
             this.buttonFeature1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFeature1.Location = new System.Drawing.Point(0, 692);
+            this.buttonFeature1.Location = new System.Drawing.Point(0, 560);
             this.buttonFeature1.Name = "buttonFeature1";
             this.buttonFeature1.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonFeature1.Size = new System.Drawing.Size(280, 80);
@@ -133,6 +175,7 @@
             this.buttonFeature1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonFeature1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFeature1.UseVisualStyleBackColor = true;
+            this.buttonFeature1.Click += new System.EventHandler(this.buttonFeature1_Click);
             // 
             // buttonEvents
             // 
@@ -144,7 +187,7 @@
             this.buttonEvents.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonEvents.Image = global::BasicFacebookFeatures.Properties.Resources.events_32;
             this.buttonEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEvents.Location = new System.Drawing.Point(0, 612);
+            this.buttonEvents.Location = new System.Drawing.Point(0, 480);
             this.buttonEvents.Name = "buttonEvents";
             this.buttonEvents.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonEvents.Size = new System.Drawing.Size(280, 80);
@@ -153,6 +196,7 @@
             this.buttonEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonEvents.UseVisualStyleBackColor = true;
+            this.buttonEvents.Click += new System.EventHandler(this.buttonEvents_Click);
             // 
             // buttonPages
             // 
@@ -164,7 +208,7 @@
             this.buttonPages.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonPages.Image = global::BasicFacebookFeatures.Properties.Resources.page_32;
             this.buttonPages.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPages.Location = new System.Drawing.Point(0, 532);
+            this.buttonPages.Location = new System.Drawing.Point(0, 400);
             this.buttonPages.Name = "buttonPages";
             this.buttonPages.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonPages.Size = new System.Drawing.Size(280, 80);
@@ -173,6 +217,7 @@
             this.buttonPages.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPages.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPages.UseVisualStyleBackColor = true;
+            this.buttonPages.Click += new System.EventHandler(this.buttonPages_Click);
             // 
             // buttonGroups
             // 
@@ -184,7 +229,7 @@
             this.buttonGroups.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonGroups.Image = global::BasicFacebookFeatures.Properties.Resources.icons8_google_groups_32;
             this.buttonGroups.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGroups.Location = new System.Drawing.Point(0, 452);
+            this.buttonGroups.Location = new System.Drawing.Point(0, 320);
             this.buttonGroups.Name = "buttonGroups";
             this.buttonGroups.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonGroups.Size = new System.Drawing.Size(280, 80);
@@ -193,6 +238,7 @@
             this.buttonGroups.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonGroups.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonGroups.UseVisualStyleBackColor = true;
+            this.buttonGroups.Click += new System.EventHandler(this.buttonGroups_Click);
             // 
             // buttonAlbums
             // 
@@ -204,7 +250,7 @@
             this.buttonAlbums.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAlbums.Image = global::BasicFacebookFeatures.Properties.Resources.albums_32;
             this.buttonAlbums.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAlbums.Location = new System.Drawing.Point(0, 372);
+            this.buttonAlbums.Location = new System.Drawing.Point(0, 240);
             this.buttonAlbums.Name = "buttonAlbums";
             this.buttonAlbums.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonAlbums.Size = new System.Drawing.Size(280, 80);
@@ -213,6 +259,7 @@
             this.buttonAlbums.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAlbums.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAlbums.UseVisualStyleBackColor = true;
+            this.buttonAlbums.Click += new System.EventHandler(this.buttonAlbums_Click);
             // 
             // buttonUserInfo
             // 
@@ -224,7 +271,7 @@
             this.buttonUserInfo.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonUserInfo.Image = global::BasicFacebookFeatures.Properties.Resources.user_32;
             this.buttonUserInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUserInfo.Location = new System.Drawing.Point(0, 292);
+            this.buttonUserInfo.Location = new System.Drawing.Point(0, 160);
             this.buttonUserInfo.Name = "buttonUserInfo";
             this.buttonUserInfo.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonUserInfo.Size = new System.Drawing.Size(280, 80);
@@ -233,6 +280,7 @@
             this.buttonUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonUserInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonUserInfo.UseVisualStyleBackColor = true;
+            this.buttonUserInfo.Click += new System.EventHandler(this.buttonUserInfo_Click);
             // 
             // buttonLogin
             // 
@@ -243,7 +291,7 @@
             this.buttonLogin.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLogin.Image = global::BasicFacebookFeatures.Properties.Resources.login_32;
             this.buttonLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogin.Location = new System.Drawing.Point(0, 212);
+            this.buttonLogin.Location = new System.Drawing.Point(0, 80);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.buttonLogin.Size = new System.Drawing.Size(280, 80);
@@ -254,42 +302,24 @@
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // panelPicture
-            // 
-            this.panelPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelPicture.Controls.Add(this.pictureBoxProfiePicture);
-            this.panelPicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPicture.Location = new System.Drawing.Point(0, 0);
-            this.panelPicture.Name = "panelPicture";
-            this.panelPicture.Size = new System.Drawing.Size(280, 212);
-            this.panelPicture.TabIndex = 0;
-            // 
-            // pictureBoxProfiePicture
-            // 
-            this.pictureBoxProfiePicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxProfiePicture.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxProfiePicture.Name = "pictureBoxProfiePicture";
-            this.pictureBoxProfiePicture.Size = new System.Drawing.Size(280, 212);
-            this.pictureBoxProfiePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxProfiePicture.TabIndex = 0;
-            this.pictureBoxProfiePicture.TabStop = false;
-            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1684, 1055);
+            this.Controls.Add(this.panelDesktopPanel);
+            this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelUserInfo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FacebookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelMenu.ResumeLayout(false);
-            this.panelPicture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfiePicture)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -307,7 +337,9 @@
         private System.Windows.Forms.Button buttonFeature2;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonAlbums;
-        private System.Windows.Forms.PictureBox pictureBoxProfiePicture;
+        private System.Windows.Forms.Panel panelTitleBar;
+        private System.Windows.Forms.Label labelTitleBar;
+        private System.Windows.Forms.Panel panelDesktopPanel;
     }
 }
 

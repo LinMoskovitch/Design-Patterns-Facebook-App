@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 
@@ -17,6 +18,7 @@ namespace BasicFacebookFeatures
         private User m_LoggedInUser;
         private const bool k_IsComponentsVisible = true;
         private const bool k_IsEnableOptions = true;
+        private Form m_ActiveForm;
 
 
         public FacebookForm()
@@ -25,7 +27,7 @@ namespace BasicFacebookFeatures
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object i_Sender, EventArgs e)
         {
             //Clipboard.SetText("design.patterns20cc"); /// the current password for Desig Patter
             Clipboard.SetText("CagLyU9?BsQ2r?9"); /// Lin's current password
@@ -52,8 +54,6 @@ namespace BasicFacebookFeatures
             {
                 m_LoggedInUser = m_LoginResult.LoggedInUser;
                 buttonLogin.Enabled = false;
-                pictureBoxProfiePicture.Visible = true;
-                pictureBoxProfiePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
                 setEnableApplicationOptions(k_IsEnableOptions);
                 setLoginEnable(!k_IsEnableOptions);
             }
@@ -82,14 +82,63 @@ namespace BasicFacebookFeatures
         }
 
 
-        private void buttonLogout_Click(object sender, EventArgs e)
+        private void buttonLogout_Click(object i_Sender, EventArgs e)
         {
 			FacebookService.LogoutWithUI();
             buttonLogin.Enabled = true;
             m_LoginResult = null;
             m_LoggedInUser = null;
-            pictureBoxProfiePicture.Visible = false;
             setEnableApplicationOptions(!k_IsEnableOptions);
+        }
+
+        private void openChildForm(Form i_ChildForm, object i_Sender)
+        {
+            m_ActiveForm?.Close();
+
+            m_ActiveForm = i_ChildForm;
+            i_ChildForm.TopLevel = false;
+            i_ChildForm.FormBorderStyle = FormBorderStyle.None;
+            i_ChildForm.Dock = DockStyle.Fill;
+            panelDesktopPanel.Controls.Add(i_ChildForm);
+            panelDesktopPanel.Tag = i_ChildForm;
+            i_ChildForm.BringToFront();
+            i_ChildForm.Show();
+            labelTitleBar.Text = i_ChildForm.Text;
+        }
+
+        private void buttonUserInfo_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormUserInfo(m_LoggedInUser), i_Sender);
+        }
+
+        private void buttonAlbums_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormAlbums(), i_Sender);
+        }
+
+        private void buttonGroups_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormGroups(), i_Sender);
+        }
+
+        private void buttonPages_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormPages(), i_Sender);
+        }
+
+        private void buttonEvents_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormEvents(), i_Sender);
+        }
+
+        private void buttonFeature1_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormFeature1(), i_Sender);
+        }
+
+        private void buttonFeature2_Click(object i_Sender, EventArgs e)
+        {
+            openChildForm(new Forms.FormFeature2(), i_Sender);
         }
     }
 }
