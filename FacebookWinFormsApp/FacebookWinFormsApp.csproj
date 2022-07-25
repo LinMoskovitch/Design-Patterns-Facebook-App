@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Forms\FormEvents.resx">
       <DependentUpon>FormEvents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGroups.resx">
+      <DependentUpon>FormGroups.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPages.resx">
       <DependentUpon>FormPages.cs</DependentUpon>
     </EmbeddedResource>
