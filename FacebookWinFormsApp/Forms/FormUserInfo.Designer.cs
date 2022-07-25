@@ -129,7 +129,7 @@ namespace BasicFacebookFeatures.Forms
             this.Controls.Add(this.labelUserInfoWelcome);
             this.Controls.Add(this.pictureBoxUserInfoProfilePicture);
             this.Name = "FormUserInfo";
-            this.Text = "FormUserInfo";
+            this.Text = "User Info";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserInfoProfilePicture)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

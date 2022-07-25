@@ -29,10 +29,17 @@ namespace BasicFacebookFeatures.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormEvents
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormEvents";
+            this.Name = "FormEvents";
+            this.Text = "Events";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -145,6 +145,15 @@
     <EmbeddedResource Include="FacebookForm.resx">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAlbums.resx">
+      <DependentUpon>FormAlbums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEvents.resx">
+      <DependentUpon>FormEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPages.resx">
+      <DependentUpon>FormPages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUserInfo.resx">
       <DependentUpon>FormUserInfo.cs</DependentUpon>
     </EmbeddedResource>
