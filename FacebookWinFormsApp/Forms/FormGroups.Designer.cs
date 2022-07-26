@@ -31,8 +31,8 @@ namespace BasicFacebookFeatures.Forms
         {
             this.panelGroups = new System.Windows.Forms.Panel();
             this.listBoxGroupsList = new System.Windows.Forms.ListBox();
-            this.pictureBoxGroupsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchGroups = new System.Windows.Forms.Button();
+            this.pictureBoxGroupsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.panelGroups.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +58,6 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxGroupsList.TabIndex = 3;
             this.listBoxGroupsList.SelectedValueChanged += new System.EventHandler(this.listBoxGroupsList_SelectedValueChanged);
             // 
-            // pictureBoxGroupsCoverPhoto
-            // 
-            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 44);
-            this.pictureBoxGroupsCoverPhoto.Name = "pictureBoxGroupsCoverPhoto";
-            this.pictureBoxGroupsCoverPhoto.Size = new System.Drawing.Size(481, 454);
-            this.pictureBoxGroupsCoverPhoto.TabIndex = 2;
-            this.pictureBoxGroupsCoverPhoto.TabStop = false;
-            // 
             // buttonFetchGroups
             // 
             this.buttonFetchGroups.Location = new System.Drawing.Point(107, 551);
@@ -76,6 +68,14 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchGroups.UseVisualStyleBackColor = true;
             this.buttonFetchGroups.Click += new System.EventHandler(this.buttonFetchGroups_Click);
             // 
+            // pictureBoxGroupsCoverPhoto
+            // 
+            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxGroupsCoverPhoto.Name = "pictureBoxGroupsCoverPhoto";
+            this.pictureBoxGroupsCoverPhoto.Size = new System.Drawing.Size(481, 454);
+            this.pictureBoxGroupsCoverPhoto.TabIndex = 2;
+            this.pictureBoxGroupsCoverPhoto.TabStop = false;
+            // 
             // FormGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -83,7 +83,7 @@ namespace BasicFacebookFeatures.Forms
             this.ClientSize = new System.Drawing.Size(1466, 809);
             this.Controls.Add(this.panelGroups);
             this.Name = "FormGroups";
-            this.Text = "FormGroups";
+            this.Text = "Groups";
             this.panelGroups.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).EndInit();
             this.ResumeLayout(false);

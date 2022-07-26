@@ -16,15 +16,57 @@ namespace BasicFacebookFeatures
     {
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
-        private const bool k_IsComponentsVisible = true;
         private const bool k_IsEnableOptions = true;
         private Form m_ActiveForm;
-
+        private Button m_currentButton;
+        private readonly Random r_Random;
+        private int m_TempIndex;
 
         public FacebookForm()
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
+            r_Random = new Random();
+        }
+
+        private Color selectThemeColor()
+        {
+            int index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
+            while (m_TempIndex == index)
+            {
+                index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
+            }
+            m_TempIndex = index;
+            string color = UIThemeColor.m_MenuColorsList[index];
+            return ColorTranslator.FromHtml(color);
+        }
+
+        private void activateButton(object i_BtnSender)
+        {
+            if (i_BtnSender != null && m_currentButton != (Button)i_BtnSender)
+            {
+                disableButton();
+                Color color = selectThemeColor();
+                m_currentButton = (Button)i_BtnSender;
+                m_currentButton.BackColor = color;
+                m_currentButton.ForeColor = Color.White;
+                m_currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                panelTitleBar.BackColor = color;
+                panelLogo.BackColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
+            }
+        }
+
+        private void disableButton()
+        {
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
         }
 
         private void buttonLogin_Click(object i_Sender, EventArgs e)
@@ -94,7 +136,7 @@ namespace BasicFacebookFeatures
         private void openChildForm(Form i_ChildForm, object i_Sender)
         {
             m_ActiveForm?.Close();
-
+            activateButton(i_Sender);
             m_ActiveForm = i_ChildForm;
             i_ChildForm.TopLevel = false;
             i_ChildForm.FormBorderStyle = FormBorderStyle.None;
@@ -140,5 +182,6 @@ namespace BasicFacebookFeatures
         {
             openChildForm(new Forms.FormFeature2(m_LoggedInUser), i_Sender);
         }
+
     }
 }

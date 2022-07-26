@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIThemeColor.cs" />
     <EmbeddedResource Include="FacebookForm.resx">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEvents.resx">
       <DependentUpon>FormEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFeature1.resx">
+      <DependentUpon>FormFeature1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFeature2.resx">
+      <DependentUpon>FormFeature2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGroups.resx">
       <DependentUpon>FormGroups.cs</DependentUpon>

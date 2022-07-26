@@ -48,7 +48,5 @@ namespace BasicFacebookFeatures.Forms
                 MessageBox.Show("No groups to fetch.");
             }
         }
-
-
     }
 }

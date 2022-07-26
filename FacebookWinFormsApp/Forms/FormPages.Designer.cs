@@ -31,8 +31,8 @@ namespace BasicFacebookFeatures.Forms
         {
             this.panelPages = new System.Windows.Forms.Panel();
             this.listBoxPagesList = new System.Windows.Forms.ListBox();
-            this.pictureBoxPagesCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchPages = new System.Windows.Forms.Button();
+            this.pictureBoxPagesCoverPhoto = new System.Windows.Forms.PictureBox();
             this.panelPages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPagesCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +58,6 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxPagesList.TabIndex = 3;
             this.listBoxPagesList.SelectedValueChanged += new System.EventHandler(this.listBoxPagesList_SelectedValueChanged);
             // 
-            // pictureBoxPagesCoverPhoto
-            // 
-            this.pictureBoxPagesCoverPhoto.Location = new System.Drawing.Point(769, 44);
-            this.pictureBoxPagesCoverPhoto.Name = "pictureBoxPagesCoverPhoto";
-            this.pictureBoxPagesCoverPhoto.Size = new System.Drawing.Size(481, 454);
-            this.pictureBoxPagesCoverPhoto.TabIndex = 2;
-            this.pictureBoxPagesCoverPhoto.TabStop = false;
-            // 
             // buttonFetchPages
             // 
             this.buttonFetchPages.Location = new System.Drawing.Point(107, 551);
@@ -75,6 +67,14 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchPages.Text = "Fetch pages";
             this.buttonFetchPages.UseVisualStyleBackColor = true;
             this.buttonFetchPages.Click += new System.EventHandler(this.buttonFetchPages_Click);
+            // 
+            // pictureBoxPagesCoverPhoto
+            // 
+            this.pictureBoxPagesCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxPagesCoverPhoto.Name = "pictureBoxPagesCoverPhoto";
+            this.pictureBoxPagesCoverPhoto.Size = new System.Drawing.Size(481, 454);
+            this.pictureBoxPagesCoverPhoto.TabIndex = 2;
+            this.pictureBoxPagesCoverPhoto.TabStop = false;
             // 
             // FormPages
             // 
