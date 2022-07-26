@@ -13,18 +13,26 @@ namespace BasicFacebookFeatures.Forms
 {
     public partial class FormGroups : Form
     {
+
         private readonly User r_LoggedInUser;
 
         public FormGroups(User i_LoggedInUser)
         {
             InitializeComponent();
             r_LoggedInUser = i_LoggedInUser;
-
         }
 
         private void buttonFetchGroups_Click(object i_Sender, EventArgs e)
         {
             fetchGroups();
+        }
+
+        private void listBoxGroupsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        {
+            if (listBoxGroupsList.Items.Count != 0)
+            {
+                pictureBoxGroupsCoverPhoto.LoadAsync((listBoxGroupsList.SelectedItem as Group)?.PictureNormalURL);
+            }
         }
 
         private void fetchGroups()
@@ -41,12 +49,6 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void listBoxGroupsList_SelectedValueChanged(object i_Sender, EventArgs e)
-        {
-            if (listBoxGroupsList.Items.Count != 0)
-            {
-                pictureBoxGroupsCoverPhoto.LoadAsync((listBoxGroupsList.SelectedItem as Group)?.PictureNormalURL);
-            }
-        }
+
     }
 }

@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelGroups.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGroups.Location = new System.Drawing.Point(0, 0);
             this.panelGroups.Name = "panelGroups";
-            this.panelGroups.Size = new System.Drawing.Size(1324, 756);
+            this.panelGroups.Size = new System.Drawing.Size(1466, 809);
             this.panelGroups.TabIndex = 1;
             // 
             // listBoxGroupsList
@@ -80,10 +80,10 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 756);
+            this.ClientSize = new System.Drawing.Size(1466, 809);
             this.Controls.Add(this.panelGroups);
             this.Name = "FormGroups";
-            this.Text = "Groups";
+            this.Text = "FormGroups";
             this.panelGroups.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).EndInit();
             this.ResumeLayout(false);
