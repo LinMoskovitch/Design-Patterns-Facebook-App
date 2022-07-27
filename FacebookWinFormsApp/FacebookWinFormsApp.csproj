@@ -104,11 +104,11 @@
     <Compile Include="Forms\FormAlbums.Designer.cs">
       <DependentUpon>FormAlbums.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEvents.cs">
+    <Compile Include="Forms\FormPosts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEvents.Designer.cs">
-      <DependentUpon>FormEvents.cs</DependentUpon>
+    <Compile Include="Forms\FormPosts.Designer.cs">
+      <DependentUpon>FormPosts.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormFeature1.cs">
       <SubType>Form</SubType>
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="Forms\FormAlbums.resx">
       <DependentUpon>FormAlbums.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEvents.resx">
-      <DependentUpon>FormEvents.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormPosts.resx">
+      <DependentUpon>FormPosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormFeature1.resx">
       <DependentUpon>FormFeature1.cs</DependentUpon>

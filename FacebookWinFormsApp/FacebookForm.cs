@@ -18,9 +18,9 @@ namespace BasicFacebookFeatures
         private User m_LoggedInUser;
         private const bool k_IsEnableOptions = true;
         private Form m_ActiveForm;
-        private Button m_currentButton;
+        private Button m_CurrentSelectedButton;
         private readonly Random r_Random;
-        private int m_TempIndex;
+        private int m_RandomColorIndex;
 
         public FacebookForm()
         {
@@ -32,39 +32,39 @@ namespace BasicFacebookFeatures
         private Color selectThemeColor()
         {
             int index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
-            while (m_TempIndex == index)
+            while (m_RandomColorIndex == index)
             {
                 index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
             }
-            m_TempIndex = index;
+            m_RandomColorIndex = index;
             string color = UIThemeColor.m_MenuColorsList[index];
             return ColorTranslator.FromHtml(color);
         }
 
-        private void activateButton(object i_BtnSender)
+        private void selectButton(object i_BtnSender)
         {
-            if (i_BtnSender != null && m_currentButton != (Button)i_BtnSender)
+            if (i_BtnSender != null && m_CurrentSelectedButton != (Button)i_BtnSender)
             {
-                disableButton();
+                deselectButton();
                 Color color = selectThemeColor();
-                m_currentButton = (Button)i_BtnSender;
-                m_currentButton.BackColor = color;
-                m_currentButton.ForeColor = Color.White;
-                m_currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                m_CurrentSelectedButton = (Button)i_BtnSender;
+                m_CurrentSelectedButton.BackColor = color;
+                m_CurrentSelectedButton.ForeColor = Color.White;
+                m_CurrentSelectedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 panelTitleBar.BackColor = color;
                 panelLogo.BackColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
             }
         }
 
-        private void disableButton()
+        private void deselectButton()
         {
-            foreach (Control previousBtn in panelMenu.Controls)
+            foreach (Control previousButton in panelMenu.Controls)
             {
-                if (previousBtn.GetType() == typeof(Button))
+                if (previousButton.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousButton.BackColor = Color.FromArgb(51, 51, 76);
+                    previousButton.ForeColor = Color.Gainsboro;
+                    previousButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -136,7 +136,7 @@ namespace BasicFacebookFeatures
         private void openChildForm(Form i_ChildForm, object i_Sender)
         {
             m_ActiveForm?.Close();
-            activateButton(i_Sender);
+            selectButton(i_Sender);
             m_ActiveForm = i_ChildForm;
             i_ChildForm.TopLevel = false;
             i_ChildForm.FormBorderStyle = FormBorderStyle.None;
@@ -170,7 +170,7 @@ namespace BasicFacebookFeatures
 
         private void buttonEvents_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormEvents(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormPosts(m_LoggedInUser), i_Sender);
         }
 
         private void buttonFeature1_Click(object i_Sender, EventArgs e)

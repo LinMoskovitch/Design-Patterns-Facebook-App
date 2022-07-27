@@ -68,7 +68,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchAlbums
             // 
-            this.buttonFetchAlbums.Location = new System.Drawing.Point(107, 551);
+            this.buttonFetchAlbums.Location = new System.Drawing.Point(107, 552);
             this.buttonFetchAlbums.Name = "buttonFetchAlbums";
             this.buttonFetchAlbums.Size = new System.Drawing.Size(204, 80);
             this.buttonFetchAlbums.TabIndex = 0;
