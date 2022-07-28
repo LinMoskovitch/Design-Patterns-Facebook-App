@@ -90,7 +90,10 @@ namespace BasicFacebookFeatures
                 "user_photos",
                 "user_posts",
                 "user_videos",
-                "groups_access_member_info");
+                "groups_access_member_info",
+                "publish_to_groups",
+                //"page_read_engagement",
+                "pages_manage_posts");
 
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
