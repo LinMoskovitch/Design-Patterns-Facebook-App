@@ -116,12 +116,6 @@
     <Compile Include="Forms\FormCollage.Designer.cs">
       <DependentUpon>FormCollage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormFeature2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormFeature2.Designer.cs">
-      <DependentUpon>FormFeature2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormGroups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCollage.resx">
       <DependentUpon>FormCollage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormFeature2.resx">
-      <DependentUpon>FormFeature2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGroups.resx">
       <DependentUpon>FormGroups.cs</DependentUpon>

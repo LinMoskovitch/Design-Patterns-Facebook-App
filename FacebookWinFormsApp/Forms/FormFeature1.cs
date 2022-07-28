@@ -12,15 +12,11 @@ using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
-    public partial class FormCollage : Form
+    public partial class FormFeature1 : Form
     {
-        private readonly FacebookUserManager r_FacebookUserManager;
-
         public FormCollage(FacebookUserManager i_FacebookUserManager)
         {
-            
             InitializeComponent();
-            r_FacebookUserManager = i_FacebookUserManager;
         }
 
         private void buttonFetchPhotos_Click(object i_Sender, EventArgs e)
@@ -31,7 +27,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAllPhotos()
         {
             listBoxPhotosList.Items.Clear();
-            foreach (Album userAlbum in r_FacebookUserManager.LoggedInUser.Albums)
+            foreach(Album userAlbum in r_LoggedInUser.Albums)
             {
                 foreach(Photo userPhoto in userAlbum.Photos)
                 {
@@ -39,7 +35,7 @@ namespace BasicFacebookFeatures.Forms
                 }
             }
 
-            if (listBoxPhotosList.Items.Count == 0)
+            if(listBoxPhotosList.Items.Count == 0)
             {
                 MessageBox.Show("No photos to fetch.");
             }
@@ -51,15 +47,15 @@ namespace BasicFacebookFeatures.Forms
             PictureBox currentPictureBox;
             List<Photo> photosToCollage = new List<Photo>();
 
-            foreach (Control currentControl in panelCollageContainer.Controls)
+            foreach(Control currentControl in panelCollageContainer.Controls)
             {
-                if (currentControl.GetType() == typeof(PictureBox))
+                if(currentControl.GetType() == typeof(PictureBox))
                 {
                     currentPictureBox = null;
                 }
             }
 
-            if (listBoxPhotosList.SelectedItems.Count > 4)
+            if(listBoxPhotosList.SelectedItems.Count > 4)
             {
                 MessageBox.Show("You have selected more than 4 photos");
             }
@@ -89,3 +85,11 @@ namespace BasicFacebookFeatures.Forms
         }
     }
 }
+
+
+
+
+
+
+
+

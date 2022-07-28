@@ -33,10 +33,11 @@ namespace BasicFacebookFeatures
         private Color selectThemeColor()
         {
             int index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
-            while (m_RandomColorIndex == index)
+            while(m_RandomColorIndex == index)
             {
                 index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
             }
+
             m_RandomColorIndex = index;
             string color = UIThemeColor.m_MenuColorsList[index];
             return ColorTranslator.FromHtml(color);
@@ -44,14 +45,19 @@ namespace BasicFacebookFeatures
 
         private void selectButton(object i_BtnSender)
         {
-            if (i_BtnSender != null && m_CurrentSelectedButton != (Button)i_BtnSender)
+            if(i_BtnSender != null && m_CurrentSelectedButton != (Button)i_BtnSender)
             {
                 deselectButton();
                 Color color = selectThemeColor();
                 m_CurrentSelectedButton = (Button)i_BtnSender;
                 m_CurrentSelectedButton.BackColor = color;
                 m_CurrentSelectedButton.ForeColor = Color.White;
-                m_CurrentSelectedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                m_CurrentSelectedButton.Font = new System.Drawing.Font(
+                    "Microsoft Sans Serif",
+                    12.5F,
+                    System.Drawing.FontStyle.Regular,
+                    System.Drawing.GraphicsUnit.Point,
+                    ((byte)(0)));
                 panelTitleBar.BackColor = color;
                 panelLogo.BackColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
             }
@@ -59,13 +65,18 @@ namespace BasicFacebookFeatures
 
         private void deselectButton()
         {
-            foreach (Control previousButton in panelMenu.Controls)
+            foreach(Control previousButton in panelMenu.Controls)
             {
-                if (previousButton.GetType() == typeof(Button))
+                if(previousButton.GetType() == typeof(Button))
                 {
                     previousButton.BackColor = Color.FromArgb(51, 51, 76);
                     previousButton.ForeColor = Color.Gainsboro;
-                    previousButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousButton.Font = new System.Drawing.Font(
+                        "Microsoft Sans Serif",
+                        10F,
+                        System.Drawing.FontStyle.Regular,
+                        System.Drawing.GraphicsUnit.Point,
+                        ((byte)(0)));
                 }
             }
         }
@@ -74,9 +85,9 @@ namespace BasicFacebookFeatures
         {
             //Clipboard.SetText("design.patterns20cc"); /// the current password for Desig Patter
             Clipboard.SetText("CagLyU9?BsQ2r?9"); /// Lin's current password
-            
 
-            if (r_FacebookUserManager.Login())
+
+            if(r_FacebookUserManager.Login())
             {
                 buttonLogin.Enabled = false;
                 setEnableApplicationOptions(k_IsEnableOptions);
@@ -96,7 +107,6 @@ namespace BasicFacebookFeatures
             buttonPages.Enabled = i_IsEnable;
             buttonPosts.Enabled = i_IsEnable;
             buttonCollage.Enabled = i_IsEnable;
-            buttonFeature2.Enabled = i_IsEnable;
             buttonLogout.Enabled = i_IsEnable;
         }
 
@@ -156,13 +166,7 @@ namespace BasicFacebookFeatures
 
         private void buttonFeature1_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormFeature1(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormCollage(r_FacebookUserManager), i_Sender);
         }
-
-        private void buttonFeature2_Click(object i_Sender, EventArgs e)
-        {
-            openChildForm(new Forms.FormFeature2(r_FacebookUserManager), i_Sender);
-        }
-
     }
 }
