@@ -36,7 +36,7 @@ namespace BasicFacebookFeatures
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonFeature2 = new System.Windows.Forms.Button();
             this.buttonFeature1 = new System.Windows.Forms.Button();
-            this.buttonEvents = new System.Windows.Forms.Button();
+            this.buttonPosts = new System.Windows.Forms.Button();
             this.buttonPages = new System.Windows.Forms.Button();
             this.buttonGroups = new System.Windows.Forms.Button();
             this.buttonAlbums = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace BasicFacebookFeatures
             this.panelMenu.Controls.Add(this.buttonLogout);
             this.panelMenu.Controls.Add(this.buttonFeature2);
             this.panelMenu.Controls.Add(this.buttonFeature1);
-            this.panelMenu.Controls.Add(this.buttonEvents);
+            this.panelMenu.Controls.Add(this.buttonPosts);
             this.panelMenu.Controls.Add(this.buttonPages);
             this.panelMenu.Controls.Add(this.buttonGroups);
             this.panelMenu.Controls.Add(this.buttonAlbums);
@@ -139,26 +139,26 @@ namespace BasicFacebookFeatures
             this.buttonFeature1.UseVisualStyleBackColor = true;
             this.buttonFeature1.Click += new System.EventHandler(this.buttonFeature1_Click);
             // 
-            // buttonEvents
+            // buttonPosts
             // 
-            this.buttonEvents.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonEvents.Enabled = false;
-            this.buttonEvents.FlatAppearance.BorderSize = 0;
-            this.buttonEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEvents.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonEvents.Image = global::BasicFacebookFeatures.Properties.Resources.events_32;
-            this.buttonEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEvents.Location = new System.Drawing.Point(0, 542);
-            this.buttonEvents.Name = "buttonEvents";
-            this.buttonEvents.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.buttonEvents.Size = new System.Drawing.Size(280, 80);
-            this.buttonEvents.TabIndex = 6;
-            this.buttonEvents.Text = "  Events";
-            this.buttonEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonEvents.UseVisualStyleBackColor = true;
-            this.buttonEvents.Click += new System.EventHandler(this.buttonEvents_Click);
+            this.buttonPosts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPosts.Enabled = false;
+            this.buttonPosts.FlatAppearance.BorderSize = 0;
+            this.buttonPosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPosts.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonPosts.Image = global::BasicFacebookFeatures.Properties.Resources.icons8_facebook_like_32;
+            this.buttonPosts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPosts.Location = new System.Drawing.Point(0, 542);
+            this.buttonPosts.Name = "buttonPosts";
+            this.buttonPosts.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.buttonPosts.Size = new System.Drawing.Size(280, 80);
+            this.buttonPosts.TabIndex = 6;
+            this.buttonPosts.Text = "  Posts";
+            this.buttonPosts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPosts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonPosts.UseVisualStyleBackColor = true;
+            this.buttonPosts.Click += new System.EventHandler(this.buttonEvents_Click);
             // 
             // buttonPages
             // 
@@ -332,7 +332,7 @@ namespace BasicFacebookFeatures
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonFeature1;
-        private System.Windows.Forms.Button buttonEvents;
+        private System.Windows.Forms.Button buttonPosts;
         private System.Windows.Forms.Button buttonPages;
         private System.Windows.Forms.Button buttonGroups;
         private System.Windows.Forms.Button buttonUserInfo;

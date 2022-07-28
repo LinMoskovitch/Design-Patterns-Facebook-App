@@ -114,7 +114,7 @@ namespace BasicFacebookFeatures
             buttonAlbums.Enabled = i_IsEnable;
             buttonGroups.Enabled = i_IsEnable;
             buttonPages.Enabled = i_IsEnable;
-            buttonEvents.Enabled = i_IsEnable;
+            buttonPosts.Enabled = i_IsEnable;
             buttonFeature1.Enabled = i_IsEnable;
             buttonFeature2.Enabled = i_IsEnable;
             buttonLogout.Enabled = i_IsEnable;
