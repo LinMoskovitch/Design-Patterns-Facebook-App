@@ -90,10 +90,7 @@ namespace BasicFacebookFeatures
                 "user_photos",
                 "user_posts",
                 "user_videos",
-                "groups_access_member_info",
-                "publish_to_groups",
-                //"page_read_engagement",
-                "pages_manage_posts");
+                "groups_access_member_info");
 
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
@@ -115,7 +112,7 @@ namespace BasicFacebookFeatures
             buttonGroups.Enabled = i_IsEnable;
             buttonPages.Enabled = i_IsEnable;
             buttonPosts.Enabled = i_IsEnable;
-            buttonFeature1.Enabled = i_IsEnable;
+            buttonCollage.Enabled = i_IsEnable;
             buttonFeature2.Enabled = i_IsEnable;
             buttonLogout.Enabled = i_IsEnable;
         }
@@ -178,7 +175,7 @@ namespace BasicFacebookFeatures
 
         private void buttonFeature1_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormFeature1(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormCollage(m_LoggedInUser), i_Sender);
         }
 
         private void buttonFeature2_Click(object i_Sender, EventArgs e)

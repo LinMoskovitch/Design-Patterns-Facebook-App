@@ -31,8 +31,8 @@ namespace BasicFacebookFeatures.Forms
         {
             this.panelAlbums = new System.Windows.Forms.Panel();
             this.listBoxAlbumsList = new System.Windows.Forms.ListBox();
-            this.pictureBoxAlbumsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchAlbums = new System.Windows.Forms.Button();
+            this.pictureBoxAlbumsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.panelAlbums.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAlbumsCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelAlbums.Name = "panelAlbums";
             this.panelAlbums.Size = new System.Drawing.Size(1397, 739);
             this.panelAlbums.TabIndex = 0;
+            this.panelAlbums.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAlbums_Paint);
             // 
             // listBoxAlbumsList
             // 
@@ -56,15 +57,8 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxAlbumsList.Name = "listBoxAlbumsList";
             this.listBoxAlbumsList.Size = new System.Drawing.Size(507, 454);
             this.listBoxAlbumsList.TabIndex = 3;
+            this.listBoxAlbumsList.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbumsList_SelectedIndexChanged);
             this.listBoxAlbumsList.SelectedValueChanged += new System.EventHandler(this.listBoxAlbumsList_SelectedValueChanged);
-            // 
-            // pictureBoxAlbumsCoverPhoto
-            // 
-            this.pictureBoxAlbumsCoverPhoto.Location = new System.Drawing.Point(769, 44);
-            this.pictureBoxAlbumsCoverPhoto.Name = "pictureBoxAlbumsCoverPhoto";
-            this.pictureBoxAlbumsCoverPhoto.Size = new System.Drawing.Size(481, 454);
-            this.pictureBoxAlbumsCoverPhoto.TabIndex = 2;
-            this.pictureBoxAlbumsCoverPhoto.TabStop = false;
             // 
             // buttonFetchAlbums
             // 
@@ -75,6 +69,15 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchAlbums.Text = "Fetch albums";
             this.buttonFetchAlbums.UseVisualStyleBackColor = true;
             this.buttonFetchAlbums.Click += new System.EventHandler(this.buttonFetchAlbums_Click);
+            // 
+            // pictureBoxAlbumsCoverPhoto
+            // 
+            this.pictureBoxAlbumsCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxAlbumsCoverPhoto.Name = "pictureBoxAlbumsCoverPhoto";
+            this.pictureBoxAlbumsCoverPhoto.Size = new System.Drawing.Size(481, 454);
+            this.pictureBoxAlbumsCoverPhoto.TabIndex = 2;
+            this.pictureBoxAlbumsCoverPhoto.TabStop = false;
+            this.pictureBoxAlbumsCoverPhoto.Click += new System.EventHandler(this.pictureBoxAlbumsCoverPhoto_Click);
             // 
             // FormAlbums
             // 

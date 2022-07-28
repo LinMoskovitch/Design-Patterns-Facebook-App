@@ -110,11 +110,11 @@
     <Compile Include="Forms\FormPosts.Designer.cs">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormFeature1.cs">
+    <Compile Include="Forms\FormCollage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormFeature1.Designer.cs">
-      <DependentUpon>FormFeature1.cs</DependentUpon>
+    <Compile Include="Forms\FormCollage.Designer.cs">
+      <DependentUpon>FormCollage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormFeature2.cs">
       <SubType>Form</SubType>
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="Forms\FormPosts.resx">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormFeature1.resx">
-      <DependentUpon>FormFeature1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCollage.resx">
+      <DependentUpon>FormCollage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormFeature2.resx">
       <DependentUpon>FormFeature2.cs</DependentUpon>
@@ -236,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-facebook-like-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-collage-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

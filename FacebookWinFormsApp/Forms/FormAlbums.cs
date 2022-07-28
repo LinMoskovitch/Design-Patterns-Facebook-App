@@ -47,5 +47,20 @@ namespace BasicFacebookFeatures.Forms
                 pictureBoxAlbumsCoverPhoto.LoadAsync((listBoxAlbumsList.SelectedItem as Album)?.PictureAlbumURL);
             }
         }
+
+        private void panelAlbums_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listBoxAlbumsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxAlbumsCoverPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

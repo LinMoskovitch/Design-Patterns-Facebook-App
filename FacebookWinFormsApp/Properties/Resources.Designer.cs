@@ -123,6 +123,16 @@ namespace BasicFacebookFeatures.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_collage_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-collage-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_facebook_like_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-facebook-like-32", resourceCulture);
