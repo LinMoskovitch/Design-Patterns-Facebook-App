@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormFeature2 : Form
     {
-        public FormFeature2(User i_LoggedInUser)
+        public FormFeature2(FacebookUserManager i_FacebookUserManager)
         {
             InitializeComponent();
         }
