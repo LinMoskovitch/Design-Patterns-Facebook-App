@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormAlbums : Form
     {
-        private readonly User r_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
 
-        public FormAlbums(User i_LoggedInUser)
+        public FormAlbums(FacebookUserManager i_FacebookUserManager)
         {
             InitializeComponent();
-            r_LoggedInUser = i_LoggedInUser;
+            r_FacebookUserManager = i_FacebookUserManager;
         }
 
         private void buttonFetchAlbums_Click(object i_Sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAlbums()
         {
             listBoxAlbumsList.Items.Clear();
-            foreach(Album userAlbum in r_LoggedInUser.Albums)
+            foreach(Album userAlbum in r_FacebookUserManager.LoggedInUser.Albums)
             {
                 listBoxAlbumsList.Items.Add(userAlbum);
             }

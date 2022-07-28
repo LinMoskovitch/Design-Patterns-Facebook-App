@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
@@ -14,12 +15,12 @@ namespace BasicFacebookFeatures.Forms
     public partial class FormGroups : Form
     {
 
-        private readonly User r_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
 
-        public FormGroups(User i_LoggedInUser)
+        public FormGroups(FacebookUserManager i_FacebookUserManager)
         {
             InitializeComponent();
-            r_LoggedInUser = i_LoggedInUser;
+            r_FacebookUserManager = i_FacebookUserManager;
         }
 
         private void buttonFetchGroups_Click(object i_Sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchGroups()
         {
             listBoxGroupsList.Items.Clear();
-            foreach (Group userGroup in r_LoggedInUser.Groups)
+            foreach (Group userGroup in r_FacebookUserManager.LoggedInUser.Groups)
             {
                 listBoxGroupsList.Items.Add(userGroup);
             }

@@ -9,13 +9,13 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using FacebookWinFormsEngine;
 
 namespace BasicFacebookFeatures
 {
     public partial class FacebookForm : Form
     {
-        private LoginResult m_LoginResult;
-        private User m_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
         private const bool k_IsEnableOptions = true;
         private Form m_ActiveForm;
         private Button m_CurrentSelectedButton;
@@ -27,6 +27,7 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
             r_Random = new Random();
+            r_FacebookUserManager = new FacebookUserManager();
         }
 
         private Color selectThemeColor()
@@ -73,28 +74,10 @@ namespace BasicFacebookFeatures
         {
             //Clipboard.SetText("design.patterns20cc"); /// the current password for Desig Patter
             Clipboard.SetText("CagLyU9?BsQ2r?9"); /// Lin's current password
+            
 
-            m_LoginResult = FacebookService.Login(
-                "768643954263924",
-                "email",
-                "public_profile",
-                "user_age_range",
-                "user_birthday",
-                "user_events",
-                "user_friends",
-                "user_gender",
-                "user_hometown",
-                "user_likes",
-                "user_link",
-                "user_location",
-                "user_photos",
-                "user_posts",
-                "user_videos",
-                "groups_access_member_info");
-
-            if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
+            if (r_FacebookUserManager.Login())
             {
-                m_LoggedInUser = m_LoginResult.LoggedInUser;
                 buttonLogin.Enabled = false;
                 setEnableApplicationOptions(k_IsEnableOptions);
                 setLoginEnable(!k_IsEnableOptions);
@@ -126,10 +109,8 @@ namespace BasicFacebookFeatures
 
         private void buttonLogout_Click(object i_Sender, EventArgs e)
         {
-			FacebookService.LogoutWithUI();
+            FacebookService.LogoutWithUI();
             buttonLogin.Enabled = true;
-            m_LoginResult = null;
-            m_LoggedInUser = null;
             setEnableApplicationOptions(!k_IsEnableOptions);
         }
 
@@ -150,37 +131,37 @@ namespace BasicFacebookFeatures
 
         private void buttonUserInfo_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormUserInfo(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormUserInfo(r_FacebookUserManager), i_Sender);
         }
 
         private void buttonAlbums_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormAlbums(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormAlbums(r_FacebookUserManager), i_Sender);
         }
 
         private void buttonGroups_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormGroups(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormGroups(r_FacebookUserManager), i_Sender);
         }
 
         private void buttonPages_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormPages(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormPages(r_FacebookUserManager), i_Sender);
         }
 
         private void buttonEvents_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormPosts(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormPosts(r_FacebookUserManager), i_Sender);
         }
 
         private void buttonFeature1_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormCollage(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormFeature1(m_LoggedInUser), i_Sender);
         }
 
         private void buttonFeature2_Click(object i_Sender, EventArgs e)
         {
-            openChildForm(new Forms.FormFeature2(m_LoggedInUser), i_Sender);
+            openChildForm(new Forms.FormFeature2(r_FacebookUserManager), i_Sender);
         }
 
     }

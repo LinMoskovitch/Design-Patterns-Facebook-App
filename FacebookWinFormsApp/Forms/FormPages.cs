@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormPages : Form
     {
-        private readonly User r_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
 
-        public FormPages(User i_LoggedInUser)
+        public FormPages(FacebookUserManager i_FacebookUserManager)
         {
             InitializeComponent();
-            r_LoggedInUser = i_LoggedInUser;
+            r_FacebookUserManager = i_FacebookUserManager;
         }
 
         private void listBoxPagesList_SelectedValueChanged(object i_Sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchPages()
         {
             listBoxPagesList.Items.Clear();
-            foreach (Page userPage in r_LoggedInUser.LikedPages)
+            foreach (Page userPage in r_FacebookUserManager.LoggedInUser.LikedPages)
             {
                 listBoxPagesList.Items.Add(userPage);
             }

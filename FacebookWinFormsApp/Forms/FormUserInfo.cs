@@ -7,30 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormUserInfo : Form
     {
-        private readonly User r_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
 
-        public FormUserInfo(User i_LoggedInUser)
+        public FormUserInfo(FacebookUserManager i_FacebookUserManager)
         {
             InitializeComponent();
-            r_LoggedInUser = i_LoggedInUser;
+            r_FacebookUserManager = i_FacebookUserManager;
             fetchAndDisplayUserInfo();
         }
 
         private void fetchAndDisplayUserInfo()
         {
-            labelUserInfoWelcome.Text += r_LoggedInUser.FirstName + "!";
-            labelUserInfoName.Text += r_LoggedInUser.Name;
-            labelUserInfoEmail.Text += r_LoggedInUser.Email;
-            labelUserInfoGender.Text += r_LoggedInUser.Gender.ToString();
-            labelUserBirthDate.Text += r_LoggedInUser.Birthday;
+            labelUserInfoWelcome.Text += r_FacebookUserManager.LoggedInUser.FirstName + "!";
+            labelUserInfoName.Text += r_FacebookUserManager.LoggedInUser.Name;
+            labelUserInfoEmail.Text += r_FacebookUserManager.LoggedInUser.Email;
+            labelUserInfoGender.Text += r_FacebookUserManager.LoggedInUser.Gender.ToString();
+            labelUserBirthDate.Text += r_FacebookUserManager.LoggedInUser.Birthday;
             pictureBoxUserInfoProfilePicture.Visible = true;
-            pictureBoxUserInfoProfilePicture.LoadAsync(r_LoggedInUser.PictureNormalURL);
+            pictureBoxUserInfoProfilePicture.LoadAsync(r_FacebookUserManager.LoggedInUser.PictureNormalURL);
 
 
         }

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacebookWinFormsApp", "FacebookWinFormsApp\FacebookWinFormsApp.csproj", "{905D5BF1-A7E4-4440-85E8-84772F5312D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacebookWinFormsUI", "FacebookWinFormsApp\FacebookWinFormsUI.csproj", "{905D5BF1-A7E4-4440-85E8-84772F5312D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacebookWinFormsEngine", "FacebookWinFormsEngine\FacebookWinFormsEngine.csproj", "{84550F92-B948-4227-820C-A9F529FDC052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{905D5BF1-A7E4-4440-85E8-84772F5312D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{905D5BF1-A7E4-4440-85E8-84772F5312D5}.Release|x64.ActiveCfg = Release|x64
 		{905D5BF1-A7E4-4440-85E8-84772F5312D5}.Release|x64.Build.0 = Release|x64
+		{84550F92-B948-4227-820C-A9F529FDC052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Debug|x64.Build.0 = Debug|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Release|x64.ActiveCfg = Release|Any CPU
+		{84550F92-B948-4227-820C-A9F529FDC052}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

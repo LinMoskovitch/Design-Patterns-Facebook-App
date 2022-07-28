@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,17 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWinFormsEngine;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures.Forms
 {
     public partial class FormPosts : Form
     {
-        private readonly User r_LoggedInUser;
+        private readonly FacebookUserManager r_FacebookUserManager;
 
-        public FormPosts(User i_LoggedInUser)
+        public FormPosts(FacebookUserManager i_FacebookUserManager)
         {
-            r_LoggedInUser = i_LoggedInUser;
+            r_FacebookUserManager = i_FacebookUserManager;
             InitializeComponent();
         }
 
@@ -29,7 +31,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchPosts()
         {
             listBoxPostsList.Items.Clear();
-            foreach(Post userPost in r_LoggedInUser.Posts)
+            foreach(Post userPost in r_FacebookUserManager.LoggedInUser.Posts)
             {
                 listBoxPostsList.Items.Add(userPost);
                 //if (userPost.Message != null)
@@ -83,7 +85,7 @@ namespace BasicFacebookFeatures.Forms
         {
             try
             {
-                Status postedStatus = r_LoggedInUser.PostStatus(textBoxStatus.Text);
+                Status postedStatus = r_FacebookUserManager.LoggedInUser.PostStatus(textBoxStatus.Text);
                 MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
             }
             catch (Exception ex)
@@ -95,6 +97,20 @@ namespace BasicFacebookFeatures.Forms
         private void textBoxStatus_TextChanged(object sender, EventArgs e)
         {
             buttonPostNewStatus.Enabled = !textBoxStatus.Text.Equals(String.Empty);
+        }
+
+        private void buttonSortPosts_Click(object sender, EventArgs e)
+        {
+            ListBox.ObjectCollection postsListObjectCollection;
+
+            if (listBoxPostsList.Items.Count != 0)
+            {
+                postsListObjectCollection = listBoxPostsList.Items;
+                if (radioButtonSortByDate.Checked)
+                {
+                    
+                }
+            }
         }
     }
 }
