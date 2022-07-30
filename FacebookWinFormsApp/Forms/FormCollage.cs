@@ -47,7 +47,8 @@ namespace BasicFacebookFeatures.Forms
 
         private void buttonMakeCollage_Click(object i_Sender, EventArgs e)
         {
-            int i = 0;
+            int pictureIndex = 0;
+            int selectedPhotosCount = 0;
             PictureBox currentPictureBox;
             List<Photo> photosToCollage = new List<Photo>();
 
@@ -55,7 +56,8 @@ namespace BasicFacebookFeatures.Forms
             {
                 if (currentControl.GetType() == typeof(PictureBox))
                 {
-                    currentPictureBox = null;
+                    currentPictureBox = (PictureBox)currentControl;
+                    currentPictureBox.Image = null;
                 }
             }
 
@@ -68,24 +70,20 @@ namespace BasicFacebookFeatures.Forms
                 foreach(Photo currentSelectedPhoto in listBoxPhotosList.SelectedItems)
                 {
                     photosToCollage.Add(currentSelectedPhoto);
+                    selectedPhotosCount = photosToCollage.Count;
                 }
 
                 foreach(Control currentControl in panelCollageContainer.Controls)
                 {
-                    if(currentControl.GetType() == typeof(PictureBox))
+                    if(pictureIndex < selectedPhotosCount && currentControl.GetType() == typeof(PictureBox))
                     {
                         currentPictureBox = (PictureBox)currentControl;
                         currentPictureBox.Visible = true;
-                        currentPictureBox.LoadAsync(photosToCollage[i]?.PictureNormalURL);
-                        i++;
+                        currentPictureBox.LoadAsync(photosToCollage.ElementAt(pictureIndex)?.PictureNormalURL);
+                        pictureIndex++;
                     }
                 }
             }
-        }
-
-        private void listBoxPhotosList_SelectedValueChanged(object sender, EventArgs e)
-        {
-            pictureBoxSample.LoadAsync((listBoxPhotosList.SelectedItem as Photo)?.PictureNormalURL);
         }
     }
 }
