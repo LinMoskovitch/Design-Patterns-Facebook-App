@@ -48,5 +48,33 @@ namespace BasicFacebookFeatures.Forms
                 MessageBox.Show("No pages to fetch.");
             }
         }
+
+        private void loadTheme()
+        {
+            Button currentButton;
+            Label currentLabel;
+
+            foreach (Control currentControl in panelPages.Controls)
+            {
+                if (currentControl.GetType() == typeof(Button))
+                {
+                    currentButton = (Button)currentControl;
+                    currentButton.BackColor = UIThemeColor.PrimaryColor;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.FlatAppearance.BorderColor = UIThemeColor.SecondaryColor;
+                }
+
+                if (currentControl.GetType() == typeof(Label))
+                {
+                    currentLabel = (Label)currentControl;
+                    currentLabel.ForeColor = UIThemeColor.PrimaryColor;
+                }
+            }
+        }
+
+        private void FormPages_Load(object sender, EventArgs e)
+        {
+            loadTheme();
+        }
     }
 }

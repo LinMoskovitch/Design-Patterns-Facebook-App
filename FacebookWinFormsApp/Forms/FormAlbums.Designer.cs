@@ -47,7 +47,6 @@ namespace BasicFacebookFeatures.Forms
             this.panelAlbums.Name = "panelAlbums";
             this.panelAlbums.Size = new System.Drawing.Size(1481, 945);
             this.panelAlbums.TabIndex = 0;
-            this.panelAlbums.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAlbums_Paint);
             // 
             // listBoxAlbumsList
             // 
@@ -57,11 +56,11 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxAlbumsList.Name = "listBoxAlbumsList";
             this.listBoxAlbumsList.Size = new System.Drawing.Size(507, 454);
             this.listBoxAlbumsList.TabIndex = 3;
-            this.listBoxAlbumsList.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbumsList_SelectedIndexChanged);
             this.listBoxAlbumsList.SelectedValueChanged += new System.EventHandler(this.listBoxAlbumsList_SelectedValueChanged);
             // 
             // buttonFetchAlbums
             // 
+            this.buttonFetchAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchAlbums.Location = new System.Drawing.Point(107, 552);
             this.buttonFetchAlbums.Name = "buttonFetchAlbums";
             this.buttonFetchAlbums.Size = new System.Drawing.Size(204, 80);
@@ -77,7 +76,6 @@ namespace BasicFacebookFeatures.Forms
             this.pictureBoxAlbumsCoverPhoto.Size = new System.Drawing.Size(481, 454);
             this.pictureBoxAlbumsCoverPhoto.TabIndex = 2;
             this.pictureBoxAlbumsCoverPhoto.TabStop = false;
-            this.pictureBoxAlbumsCoverPhoto.Click += new System.EventHandler(this.pictureBoxAlbumsCoverPhoto_Click);
             // 
             // FormAlbums
             // 
@@ -89,6 +87,7 @@ namespace BasicFacebookFeatures.Forms
             this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormAlbums";
             this.Text = "Albums";
+            this.Load += new System.EventHandler(this.FormAlbums_Load);
             this.panelAlbums.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAlbumsCoverPhoto)).EndInit();
             this.ResumeLayout(false);

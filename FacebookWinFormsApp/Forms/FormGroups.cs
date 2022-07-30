@@ -49,5 +49,35 @@ namespace BasicFacebookFeatures.Forms
                 MessageBox.Show("No groups to fetch.");
             }
         }
+
+        private void loadTheme()
+        {
+            Button currentButton;
+            Label currentLabel;
+
+            foreach (Control currentControl in panelGroups.Controls)
+            {
+                if (currentControl.GetType() == typeof(Button))
+                {
+                    currentButton = (Button)currentControl;
+                    currentButton.BackColor = UIThemeColor.PrimaryColor;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.FlatAppearance.BorderColor = UIThemeColor.SecondaryColor;
+                }
+
+                if (currentControl.GetType() == typeof(Label))
+                {
+                    currentLabel = (Label)currentControl;
+                    currentLabel.ForeColor = UIThemeColor.PrimaryColor;
+                }
+            }
+        }
+
+       
+
+        private void FormGroups_Load(object sender, EventArgs e)
+        {
+            loadTheme();
+        }
     }
 }

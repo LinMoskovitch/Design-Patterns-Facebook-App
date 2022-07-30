@@ -22,6 +22,29 @@ namespace BasicFacebookFeatures.Forms
             r_FacebookUserManager = i_FacebookUserManager;
         }
 
+        private void loadTheme()
+        {
+            Button currentButton;
+            Label currentLabel;
+
+            foreach (Control currentControl in panelAlbums.Controls)
+            {
+                if (currentControl.GetType() == typeof(Button))
+                {
+                    currentButton = (Button)currentControl;
+                    currentButton.BackColor = UIThemeColor.PrimaryColor;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.FlatAppearance.BorderColor = UIThemeColor.SecondaryColor;
+                }
+
+                if(currentControl.GetType() == typeof(Label))
+                {
+                    currentLabel = (Label)currentControl;
+                    currentLabel.ForeColor = UIThemeColor.PrimaryColor;
+                }
+            }
+        }
+
         private void buttonFetchAlbums_Click(object i_Sender, EventArgs e)
         {
             fetchAlbums();
@@ -49,19 +72,9 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void panelAlbums_Paint(object sender, PaintEventArgs e)
+        private void FormAlbums_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void listBoxAlbumsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxAlbumsCoverPhoto_Click(object sender, EventArgs e)
-        {
-
+            loadTheme();
         }
     }
 }

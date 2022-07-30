@@ -60,6 +60,8 @@ namespace BasicFacebookFeatures
                     ((byte)(0)));
                 panelTitleBar.BackColor = color;
                 panelLogo.BackColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
+                UIThemeColor.PrimaryColor = color;
+                UIThemeColor.SecondaryColor = UIThemeColor.ChangeColorBrightness(color, -0.3); ;
             }
         }
 

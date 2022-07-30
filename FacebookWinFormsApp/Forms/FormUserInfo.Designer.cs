@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.labelUserInfoWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelUserInfoWelcome.AutoSize = true;
             this.labelUserInfoWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserInfoWelcome.Location = new System.Drawing.Point(532, 58);
+            this.labelUserInfoWelcome.Location = new System.Drawing.Point(541, 91);
             this.labelUserInfoWelcome.Name = "labelUserInfoWelcome";
             this.labelUserInfoWelcome.Size = new System.Drawing.Size(337, 76);
             this.labelUserInfoWelcome.TabIndex = 8;
@@ -132,6 +132,7 @@ namespace BasicFacebookFeatures.Forms
             this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormUserInfo";
             this.Text = "User Info";
+            this.Load += new System.EventHandler(this.FormUserInfo_Load);
             this.panelUserInfo.ResumeLayout(false);
             this.panelUserInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserInfoProfilePicture)).EndInit();

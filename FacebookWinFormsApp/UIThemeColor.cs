@@ -9,6 +9,8 @@ namespace BasicFacebookFeatures
 {
     public static class UIThemeColor
     {
+        public static Color PrimaryColor { get; set; }
+        public static Color SecondaryColor { get; set; }
         public static List<string> m_MenuColorsList = new List<string>() { "#3F51B5",
                                                                              "#009688",
                                                                              "#FF5722",
@@ -59,5 +61,7 @@ namespace BasicFacebookFeatures
 
             return Color.FromArgb(i_Color.A, (byte)red, (byte)green, (byte)blue);
         }
+
+      
     }
 }

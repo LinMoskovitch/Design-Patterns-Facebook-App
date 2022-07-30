@@ -68,6 +68,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchGroups
             // 
+            this.buttonFetchGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchGroups.Location = new System.Drawing.Point(107, 551);
             this.buttonFetchGroups.Name = "buttonFetchGroups";
             this.buttonFetchGroups.Size = new System.Drawing.Size(204, 80);
@@ -86,6 +87,7 @@ namespace BasicFacebookFeatures.Forms
             this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormGroups";
             this.Text = "Groups";
+            this.Load += new System.EventHandler(this.FormGroups_Load);
             this.panelGroups.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).EndInit();
             this.ResumeLayout(false);

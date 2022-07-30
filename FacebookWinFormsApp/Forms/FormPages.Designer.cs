@@ -68,6 +68,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchPages
             // 
+            this.buttonFetchPages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchPages.Location = new System.Drawing.Point(107, 551);
             this.buttonFetchPages.Name = "buttonFetchPages";
             this.buttonFetchPages.Size = new System.Drawing.Size(204, 80);
@@ -86,6 +87,7 @@ namespace BasicFacebookFeatures.Forms
             this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormPages";
             this.Text = "Pages";
+            this.Load += new System.EventHandler(this.FormPages_Load);
             this.panelPages.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPagesCoverPhoto)).EndInit();
             this.ResumeLayout(false);

@@ -78,6 +78,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonMakeCollage
             // 
+            this.buttonMakeCollage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMakeCollage.Location = new System.Drawing.Point(186, 686);
             this.buttonMakeCollage.Name = "buttonMakeCollage";
             this.buttonMakeCollage.Size = new System.Drawing.Size(130, 80);
@@ -120,6 +121,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchPhotos
             // 
+            this.buttonFetchPhotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchPhotos.Location = new System.Drawing.Point(30, 686);
             this.buttonFetchPhotos.Name = "buttonFetchPhotos";
             this.buttonFetchPhotos.Size = new System.Drawing.Size(150, 80);
@@ -187,6 +189,7 @@ namespace BasicFacebookFeatures.Forms
             this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormCollage";
             this.Text = "Collage";
+            this.Load += new System.EventHandler(this.FormCollage_Load);
             this.panelCollage.ResumeLayout(false);
             this.panelCollage.PerformLayout();
             this.panelCollageContainer.ResumeLayout(false);
