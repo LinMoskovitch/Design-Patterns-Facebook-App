@@ -234,6 +234,12 @@
       <Name>FacebookWinFormsEngine</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeALON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEALON logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

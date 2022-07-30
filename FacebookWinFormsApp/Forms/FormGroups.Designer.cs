@@ -31,8 +31,8 @@ namespace BasicFacebookFeatures.Forms
         {
             this.panelGroups = new System.Windows.Forms.Panel();
             this.listBoxGroupsList = new System.Windows.Forms.ListBox();
-            this.buttonFetchGroups = new System.Windows.Forms.Button();
             this.pictureBoxGroupsCoverPhoto = new System.Windows.Forms.PictureBox();
+            this.buttonFetchGroups = new System.Windows.Forms.Button();
             this.panelGroups.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelGroups.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGroups.Location = new System.Drawing.Point(0, 0);
             this.panelGroups.Name = "panelGroups";
-            this.panelGroups.Size = new System.Drawing.Size(1466, 809);
+            this.panelGroups.Size = new System.Drawing.Size(1481, 945);
             this.panelGroups.TabIndex = 1;
             // 
             // listBoxGroupsList
@@ -58,6 +58,14 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxGroupsList.TabIndex = 3;
             this.listBoxGroupsList.SelectedValueChanged += new System.EventHandler(this.listBoxGroupsList_SelectedValueChanged);
             // 
+            // pictureBoxGroupsCoverPhoto
+            // 
+            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxGroupsCoverPhoto.Name = "pictureBoxGroupsCoverPhoto";
+            this.pictureBoxGroupsCoverPhoto.Size = new System.Drawing.Size(481, 454);
+            this.pictureBoxGroupsCoverPhoto.TabIndex = 2;
+            this.pictureBoxGroupsCoverPhoto.TabStop = false;
+            // 
             // buttonFetchGroups
             // 
             this.buttonFetchGroups.Location = new System.Drawing.Point(107, 551);
@@ -68,20 +76,14 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchGroups.UseVisualStyleBackColor = true;
             this.buttonFetchGroups.Click += new System.EventHandler(this.buttonFetchGroups_Click);
             // 
-            // pictureBoxGroupsCoverPhoto
-            // 
-            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 44);
-            this.pictureBoxGroupsCoverPhoto.Name = "pictureBoxGroupsCoverPhoto";
-            this.pictureBoxGroupsCoverPhoto.Size = new System.Drawing.Size(481, 454);
-            this.pictureBoxGroupsCoverPhoto.TabIndex = 2;
-            this.pictureBoxGroupsCoverPhoto.TabStop = false;
-            // 
             // FormGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1466, 809);
+            this.ClientSize = new System.Drawing.Size(1481, 945);
             this.Controls.Add(this.panelGroups);
+            this.MaximumSize = new System.Drawing.Size(1507, 1016);
+            this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormGroups";
             this.Text = "Groups";
             this.panelGroups.ResumeLayout(false);

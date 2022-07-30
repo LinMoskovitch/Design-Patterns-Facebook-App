@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelAlbums.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAlbums.Location = new System.Drawing.Point(0, 0);
             this.panelAlbums.Name = "panelAlbums";
-            this.panelAlbums.Size = new System.Drawing.Size(1397, 739);
+            this.panelAlbums.Size = new System.Drawing.Size(1481, 945);
             this.panelAlbums.TabIndex = 0;
             this.panelAlbums.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAlbums_Paint);
             // 
@@ -83,8 +83,10 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 739);
+            this.ClientSize = new System.Drawing.Size(1481, 945);
             this.Controls.Add(this.panelAlbums);
+            this.MaximumSize = new System.Drawing.Size(1507, 1016);
+            this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormAlbums";
             this.Text = "Albums";
             this.panelAlbums.ResumeLayout(false);

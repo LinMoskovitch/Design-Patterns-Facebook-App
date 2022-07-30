@@ -31,8 +31,8 @@ namespace BasicFacebookFeatures.Forms
         {
             this.panelPages = new System.Windows.Forms.Panel();
             this.listBoxPagesList = new System.Windows.Forms.ListBox();
-            this.buttonFetchPages = new System.Windows.Forms.Button();
             this.pictureBoxPagesCoverPhoto = new System.Windows.Forms.PictureBox();
+            this.buttonFetchPages = new System.Windows.Forms.Button();
             this.panelPages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPagesCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPages.Location = new System.Drawing.Point(0, 0);
             this.panelPages.Name = "panelPages";
-            this.panelPages.Size = new System.Drawing.Size(1511, 868);
+            this.panelPages.Size = new System.Drawing.Size(1481, 945);
             this.panelPages.TabIndex = 2;
             // 
             // listBoxPagesList
@@ -58,6 +58,14 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxPagesList.TabIndex = 3;
             this.listBoxPagesList.SelectedValueChanged += new System.EventHandler(this.listBoxPagesList_SelectedValueChanged);
             // 
+            // pictureBoxPagesCoverPhoto
+            // 
+            this.pictureBoxPagesCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxPagesCoverPhoto.Name = "pictureBoxPagesCoverPhoto";
+            this.pictureBoxPagesCoverPhoto.Size = new System.Drawing.Size(481, 454);
+            this.pictureBoxPagesCoverPhoto.TabIndex = 2;
+            this.pictureBoxPagesCoverPhoto.TabStop = false;
+            // 
             // buttonFetchPages
             // 
             this.buttonFetchPages.Location = new System.Drawing.Point(107, 551);
@@ -68,20 +76,14 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchPages.UseVisualStyleBackColor = true;
             this.buttonFetchPages.Click += new System.EventHandler(this.buttonFetchPages_Click);
             // 
-            // pictureBoxPagesCoverPhoto
-            // 
-            this.pictureBoxPagesCoverPhoto.Location = new System.Drawing.Point(769, 44);
-            this.pictureBoxPagesCoverPhoto.Name = "pictureBoxPagesCoverPhoto";
-            this.pictureBoxPagesCoverPhoto.Size = new System.Drawing.Size(481, 454);
-            this.pictureBoxPagesCoverPhoto.TabIndex = 2;
-            this.pictureBoxPagesCoverPhoto.TabStop = false;
-            // 
             // FormPages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1511, 868);
+            this.ClientSize = new System.Drawing.Size(1481, 945);
             this.Controls.Add(this.panelPages);
+            this.MaximumSize = new System.Drawing.Size(1507, 1016);
+            this.MinimumSize = new System.Drawing.Size(1507, 1016);
             this.Name = "FormPages";
             this.Text = "Pages";
             this.panelPages.ResumeLayout(false);
