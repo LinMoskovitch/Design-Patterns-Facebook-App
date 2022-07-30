@@ -30,6 +30,7 @@ namespace BasicFacebookFeatures.Forms
         private void InitializeComponent()
         {
             this.panelCollage = new System.Windows.Forms.Panel();
+            this.labelCurrentSelectedPhoto = new System.Windows.Forms.Label();
             this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             this.buttonMakeCollage = new System.Windows.Forms.Button();
             this.panelCollageContainer = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // panelCollage
             // 
+            this.panelCollage.Controls.Add(this.labelCurrentSelectedPhoto);
             this.panelCollage.Controls.Add(this.pictureBoxSample);
             this.panelCollage.Controls.Add(this.buttonMakeCollage);
             this.panelCollage.Controls.Add(this.panelCollageContainer);
@@ -60,12 +62,23 @@ namespace BasicFacebookFeatures.Forms
             this.panelCollage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCollage.Location = new System.Drawing.Point(0, 0);
             this.panelCollage.Name = "panelCollage";
-            this.panelCollage.Size = new System.Drawing.Size(1379, 964);
+            this.panelCollage.Size = new System.Drawing.Size(1877, 1156);
             this.panelCollage.TabIndex = 1;
+            // 
+            // labelCurrentSelectedPhoto
+            // 
+            this.labelCurrentSelectedPhoto.AutoSize = true;
+            this.labelCurrentSelectedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentSelectedPhoto.Location = new System.Drawing.Point(644, 354);
+            this.labelCurrentSelectedPhoto.Name = "labelCurrentSelectedPhoto";
+            this.labelCurrentSelectedPhoto.Size = new System.Drawing.Size(367, 39);
+            this.labelCurrentSelectedPhoto.TabIndex = 8;
+            this.labelCurrentSelectedPhoto.Text = "Current selected photo";
+            this.labelCurrentSelectedPhoto.Visible = false;
             // 
             // pictureBoxSample
             // 
-            this.pictureBoxSample.Location = new System.Drawing.Point(609, 702);
+            this.pictureBoxSample.Location = new System.Drawing.Point(651, 435);
             this.pictureBoxSample.Name = "pictureBoxSample";
             this.pictureBoxSample.Size = new System.Drawing.Size(231, 226);
             this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,7 +87,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonMakeCollage
             // 
-            this.buttonMakeCollage.Location = new System.Drawing.Point(644, 373);
+            this.buttonMakeCollage.Location = new System.Drawing.Point(453, 686);
             this.buttonMakeCollage.Name = "buttonMakeCollage";
             this.buttonMakeCollage.Size = new System.Drawing.Size(154, 80);
             this.buttonMakeCollage.TabIndex = 6;
@@ -88,7 +101,7 @@ namespace BasicFacebookFeatures.Forms
             this.panelCollageContainer.Controls.Add(this.pictureBoxPhoto2);
             this.panelCollageContainer.Controls.Add(this.pictureBoxPhoto3);
             this.panelCollageContainer.Controls.Add(this.pictureBoxPhoto4);
-            this.panelCollageContainer.Location = new System.Drawing.Point(842, 157);
+            this.panelCollageContainer.Location = new System.Drawing.Point(1181, 157);
             this.panelCollageContainer.Name = "panelCollageContainer";
             this.panelCollageContainer.Size = new System.Drawing.Size(500, 500);
             this.panelCollageContainer.TabIndex = 5;
@@ -152,6 +165,7 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxPhotosList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxPhotosList.Size = new System.Drawing.Size(500, 504);
             this.listBoxPhotosList.TabIndex = 3;
+            this.listBoxPhotosList.SelectedValueChanged += new System.EventHandler(this.listBoxPhotosList_SelectedValueChanged);
             // 
             // buttonFetchPhotos
             // 
@@ -167,7 +181,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 964);
+            this.ClientSize = new System.Drawing.Size(1877, 1156);
             this.Controls.Add(this.panelCollage);
             this.Name = "FormCollage";
             this.Text = "Collage";
@@ -196,5 +210,6 @@ namespace BasicFacebookFeatures.Forms
         private System.Windows.Forms.ListBox listBoxPhotosList;
         private System.Windows.Forms.Button buttonFetchPhotos;
         private System.Windows.Forms.PictureBox pictureBoxSample;
+        private System.Windows.Forms.Label labelCurrentSelectedPhoto;
     }
 }

@@ -85,5 +85,12 @@ namespace BasicFacebookFeatures.Forms
                 }
             }
         }
+
+        private void listBoxPhotosList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            labelCurrentSelectedPhoto.Visible = true;
+            pictureBoxSample.LoadAsync((listBoxPhotosList.SelectedItem as Photo)?.PictureNormalURL);
+
+        }
     }
 }
