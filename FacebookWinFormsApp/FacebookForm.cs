@@ -122,8 +122,10 @@ namespace BasicFacebookFeatures
             FacebookService.LogoutWithUI();
             buttonLogin.Enabled = true;
             setEnableApplicationOptions(!k_IsEnableOptions);
+            ActiveForm?.Close();
         }
 
+        
         private void openChildForm(Form i_ChildForm, object i_Sender)
         {
             m_ActiveForm?.Close();
