@@ -60,7 +60,7 @@ namespace BasicFacebookFeatures.Forms
             // buttonFetchPosts
             // 
             this.buttonFetchPosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFetchPosts.Location = new System.Drawing.Point(106, 604);
+            this.buttonFetchPosts.Location = new System.Drawing.Point(106, 573);
             this.buttonFetchPosts.Name = "buttonFetchPosts";
             this.buttonFetchPosts.Size = new System.Drawing.Size(204, 80);
             this.buttonFetchPosts.TabIndex = 0;
@@ -158,7 +158,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // textBoxStatus
             // 
-            this.textBoxStatus.Location = new System.Drawing.Point(106, 707);
+            this.textBoxStatus.Location = new System.Drawing.Point(106, 676);
             this.textBoxStatus.Multiline = true;
             this.textBoxStatus.Name = "textBoxStatus";
             this.textBoxStatus.Size = new System.Drawing.Size(527, 101);
@@ -176,7 +176,7 @@ namespace BasicFacebookFeatures.Forms
             // buttonPostNewStatus
             // 
             this.buttonPostNewStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPostNewStatus.Location = new System.Drawing.Point(656, 753);
+            this.buttonPostNewStatus.Location = new System.Drawing.Point(656, 722);
             this.buttonPostNewStatus.Name = "buttonPostNewStatus";
             this.buttonPostNewStatus.Size = new System.Drawing.Size(204, 55);
             this.buttonPostNewStatus.TabIndex = 5;

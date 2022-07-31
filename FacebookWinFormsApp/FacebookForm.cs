@@ -94,11 +94,18 @@ namespace BasicFacebookFeatures
                 buttonLogin.Enabled = false;
                 setEnableApplicationOptions(k_IsEnableOptions);
                 setLoginEnable(!k_IsEnableOptions);
+                fetchUserInformation();
             }
             else
             {
                 MessageBox.Show("Error occurred while trying to login ");
             }
+        }
+
+        private void fetchUserInformation()
+        {
+            pictureBoxCircleProfilePicture.LoadAsync(r_FacebookUserManager.LoggedInUser.PictureSqaureURL);
+            labelProfileName.Text = r_FacebookUserManager.LoggedInUser.FirstName;
         }
 
         private void setEnableApplicationOptions(bool i_IsEnable)
@@ -110,6 +117,8 @@ namespace BasicFacebookFeatures
             buttonPosts.Enabled = i_IsEnable;
             buttonCollage.Enabled = i_IsEnable;
             buttonLogout.Enabled = i_IsEnable;
+            pictureBoxCircleProfilePicture.Visible = i_IsEnable;
+            labelProfileName.Visible = i_IsEnable;
         }
 
         private void setLoginEnable(bool i_IsEnable)
