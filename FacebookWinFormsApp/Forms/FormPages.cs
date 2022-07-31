@@ -26,6 +26,7 @@ namespace BasicFacebookFeatures.Forms
         {
             if (listBoxPagesList.Items.Count != 0)
             {
+                labelCoverPhoto.Visible = true;
                 pictureBoxPagesCoverPhoto.LoadAsync((listBoxPagesList.SelectedItem as Page)?.PictureURL);
             }
         }

@@ -68,6 +68,7 @@ namespace BasicFacebookFeatures.Forms
         {
             if(listBoxAlbumsList.Items.Count != 0)
             {
+                labelCoverPhoto.Visible = true;
                 pictureBoxAlbumsCoverPhoto.LoadAsync((listBoxAlbumsList.SelectedItem as Album)?.PictureAlbumURL);
             }
         }
@@ -75,6 +76,11 @@ namespace BasicFacebookFeatures.Forms
         private void FormAlbums_Load(object sender, EventArgs e)
         {
             loadTheme();
+        }
+
+        private void labelCoverPhoto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

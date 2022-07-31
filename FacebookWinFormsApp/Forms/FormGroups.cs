@@ -32,6 +32,7 @@ namespace BasicFacebookFeatures.Forms
         {
             if (listBoxGroupsList.Items.Count != 0)
             {
+                labelCoverPhoto.Visible = true;
                 pictureBoxGroupsCoverPhoto.LoadAsync((listBoxGroupsList.SelectedItem as Group)?.PictureNormalURL);
             }
         }
@@ -72,8 +73,6 @@ namespace BasicFacebookFeatures.Forms
                 }
             }
         }
-
-       
 
         private void FormGroups_Load(object sender, EventArgs e)
         {

@@ -34,18 +34,6 @@ namespace BasicFacebookFeatures.Forms
             foreach(Post userPost in r_FacebookUserManager.LoggedInUser.Posts)
             {
                 listBoxPostsList.Items.Add(userPost);
-                //if (userPost.Message != null)
-                //{
-                //    listBoxPostsList.Items.Add(userPost.Message);
-                //}
-                //else if(userPost.Caption != null)
-                //{
-                //    listBoxPostsList.Items.Add(userPost.Caption);
-                //}
-                //else
-                //{
-                //    listBoxPostsList.Items.Add($"[{userPost.Type}]");
-                //}
             }
 
             if(listBoxPostsList.Items.Count == 0)
@@ -64,6 +52,7 @@ namespace BasicFacebookFeatures.Forms
                 if(((Post)listBoxPostsList.SelectedItem).Type.Equals(Post.eType.photo))
                 {
                     pictureBoxPostPhotoDisplay.Visible = true;
+                    labelCoverPhoto.Visible = true;
                     pictureBoxPostPhotoDisplay.LoadAsync(((Post)listBoxPostsList.SelectedItem)?.PictureURL);
                 }
 

@@ -33,12 +33,14 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxGroupsList = new System.Windows.Forms.ListBox();
             this.pictureBoxGroupsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchGroups = new System.Windows.Forms.Button();
+            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.panelGroups.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGroups
             // 
+            this.panelGroups.Controls.Add(this.labelCoverPhoto);
             this.panelGroups.Controls.Add(this.listBoxGroupsList);
             this.panelGroups.Controls.Add(this.pictureBoxGroupsCoverPhoto);
             this.panelGroups.Controls.Add(this.buttonFetchGroups);
@@ -52,7 +54,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.listBoxGroupsList.FormattingEnabled = true;
             this.listBoxGroupsList.ItemHeight = 25;
-            this.listBoxGroupsList.Location = new System.Drawing.Point(107, 44);
+            this.listBoxGroupsList.Location = new System.Drawing.Point(107, 153);
             this.listBoxGroupsList.Name = "listBoxGroupsList";
             this.listBoxGroupsList.Size = new System.Drawing.Size(507, 454);
             this.listBoxGroupsList.TabIndex = 3;
@@ -60,7 +62,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // pictureBoxGroupsCoverPhoto
             // 
-            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 44);
+            this.pictureBoxGroupsCoverPhoto.Location = new System.Drawing.Point(769, 153);
             this.pictureBoxGroupsCoverPhoto.Name = "pictureBoxGroupsCoverPhoto";
             this.pictureBoxGroupsCoverPhoto.Size = new System.Drawing.Size(481, 454);
             this.pictureBoxGroupsCoverPhoto.TabIndex = 2;
@@ -69,13 +71,24 @@ namespace BasicFacebookFeatures.Forms
             // buttonFetchGroups
             // 
             this.buttonFetchGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFetchGroups.Location = new System.Drawing.Point(107, 551);
+            this.buttonFetchGroups.Location = new System.Drawing.Point(107, 660);
             this.buttonFetchGroups.Name = "buttonFetchGroups";
             this.buttonFetchGroups.Size = new System.Drawing.Size(204, 80);
             this.buttonFetchGroups.TabIndex = 0;
             this.buttonFetchGroups.Text = "Fetch groups";
             this.buttonFetchGroups.UseVisualStyleBackColor = true;
             this.buttonFetchGroups.Click += new System.EventHandler(this.buttonFetchGroups_Click);
+            // 
+            // labelCoverPhoto
+            // 
+            this.labelCoverPhoto.AutoSize = true;
+            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoverPhoto.Location = new System.Drawing.Point(762, 70);
+            this.labelCoverPhoto.Name = "labelCoverPhoto";
+            this.labelCoverPhoto.Size = new System.Drawing.Size(328, 39);
+            this.labelCoverPhoto.TabIndex = 5;
+            this.labelCoverPhoto.Text = "Group\'s cover photo";
+            this.labelCoverPhoto.Visible = false;
             // 
             // FormGroups
             // 
@@ -89,6 +102,7 @@ namespace BasicFacebookFeatures.Forms
             this.Text = "Groups";
             this.Load += new System.EventHandler(this.FormGroups_Load);
             this.panelGroups.ResumeLayout(false);
+            this.panelGroups.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).EndInit();
             this.ResumeLayout(false);
 
@@ -100,5 +114,6 @@ namespace BasicFacebookFeatures.Forms
         private System.Windows.Forms.ListBox listBoxGroupsList;
         private System.Windows.Forms.PictureBox pictureBoxGroupsCoverPhoto;
         private System.Windows.Forms.Button buttonFetchGroups;
+        private System.Windows.Forms.Label labelCoverPhoto;
     }
 }
