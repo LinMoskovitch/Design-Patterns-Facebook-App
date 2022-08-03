@@ -60,7 +60,6 @@ namespace BasicFacebookFeatures.Forms
             this.labelCoverPhoto.TabIndex = 4;
             this.labelCoverPhoto.Text = "Album\'s cover photo";
             this.labelCoverPhoto.Visible = false;
-            this.labelCoverPhoto.Click += new System.EventHandler(this.labelCoverPhoto_Click);
             // 
             // listBoxAlbumsList
             // 

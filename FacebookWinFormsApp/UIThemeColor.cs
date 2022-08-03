@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BasicFacebookFeatures
 {
@@ -62,6 +63,27 @@ namespace BasicFacebookFeatures
             return Color.FromArgb(i_Color.A, (byte)red, (byte)green, (byte)blue);
         }
 
-      
+        public static void LoadTheme(Panel i_CurrentPanel)
+        {
+            Button currentButton;
+            Label currentLabel;
+
+            foreach (Control currentControl in i_CurrentPanel.Controls)
+            {
+                if (currentControl.GetType() == typeof(Button))
+                {
+                    currentButton = (Button)currentControl;
+                    currentButton.BackColor = UIThemeColor.PrimaryColor;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.FlatAppearance.BorderColor = UIThemeColor.SecondaryColor;
+                }
+
+                if (currentControl.GetType() == typeof(Label))
+                {
+                    currentLabel = (Label)currentControl;
+                    currentLabel.ForeColor = UIThemeColor.PrimaryColor;
+                }
+            }
+        }
     }
 }
