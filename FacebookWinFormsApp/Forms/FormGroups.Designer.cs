@@ -30,10 +30,10 @@ namespace BasicFacebookFeatures.Forms
         private void InitializeComponent()
         {
             this.panelGroups = new System.Windows.Forms.Panel();
+            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.listBoxGroupsList = new System.Windows.Forms.ListBox();
             this.pictureBoxGroupsCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchGroups = new System.Windows.Forms.Button();
-            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.panelGroups.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGroupsCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,17 @@ namespace BasicFacebookFeatures.Forms
             this.panelGroups.Name = "panelGroups";
             this.panelGroups.Size = new System.Drawing.Size(1481, 945);
             this.panelGroups.TabIndex = 1;
+            // 
+            // labelCoverPhoto
+            // 
+            this.labelCoverPhoto.AutoSize = true;
+            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoverPhoto.Location = new System.Drawing.Point(762, 70);
+            this.labelCoverPhoto.Name = "labelCoverPhoto";
+            this.labelCoverPhoto.Size = new System.Drawing.Size(328, 39);
+            this.labelCoverPhoto.TabIndex = 5;
+            this.labelCoverPhoto.Text = "Group\'s cover photo";
+            this.labelCoverPhoto.Visible = false;
             // 
             // listBoxGroupsList
             // 
@@ -70,6 +81,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchGroups
             // 
+            this.buttonFetchGroups.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFetchGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchGroups.Location = new System.Drawing.Point(107, 660);
             this.buttonFetchGroups.Name = "buttonFetchGroups";
@@ -78,17 +90,6 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchGroups.Text = "Fetch groups";
             this.buttonFetchGroups.UseVisualStyleBackColor = true;
             this.buttonFetchGroups.Click += new System.EventHandler(this.buttonFetchGroups_Click);
-            // 
-            // labelCoverPhoto
-            // 
-            this.labelCoverPhoto.AutoSize = true;
-            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoverPhoto.Location = new System.Drawing.Point(762, 70);
-            this.labelCoverPhoto.Name = "labelCoverPhoto";
-            this.labelCoverPhoto.Size = new System.Drawing.Size(328, 39);
-            this.labelCoverPhoto.TabIndex = 5;
-            this.labelCoverPhoto.Text = "Group\'s cover photo";
-            this.labelCoverPhoto.Visible = false;
             // 
             // FormGroups
             // 

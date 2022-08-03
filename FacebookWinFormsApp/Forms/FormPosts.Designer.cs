@@ -32,18 +32,15 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxPostsList = new System.Windows.Forms.ListBox();
             this.buttonFetchPosts = new System.Windows.Forms.Button();
             this.panelPosts = new System.Windows.Forms.Panel();
-            this.groupBoxRadioButtonsContainer = new System.Windows.Forms.GroupBox();
-            this.buttonSortPosts = new System.Windows.Forms.Button();
-            this.radioButtonSortByDate = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByLikes = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByComments = new System.Windows.Forms.RadioButton();
+            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.listBoxCommentsList = new System.Windows.Forms.ListBox();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.pictureBoxPostPhotoDisplay = new System.Windows.Forms.PictureBox();
             this.buttonPostNewStatus = new System.Windows.Forms.Button();
-            this.labelCoverPhoto = new System.Windows.Forms.Label();
+            this.labelFilter = new System.Windows.Forms.Label();
+            this.textBoxFilterByKeyword = new System.Windows.Forms.TextBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.panelPosts.SuspendLayout();
-            this.groupBoxRadioButtonsContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPostPhotoDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +56,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchPosts
             // 
+            this.buttonFetchPosts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFetchPosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchPosts.Location = new System.Drawing.Point(106, 573);
             this.buttonFetchPosts.Name = "buttonFetchPosts";
@@ -70,8 +68,10 @@ namespace BasicFacebookFeatures.Forms
             // 
             // panelPosts
             // 
+            this.panelPosts.Controls.Add(this.buttonFilter);
+            this.panelPosts.Controls.Add(this.textBoxFilterByKeyword);
+            this.panelPosts.Controls.Add(this.labelFilter);
             this.panelPosts.Controls.Add(this.labelCoverPhoto);
-            this.panelPosts.Controls.Add(this.groupBoxRadioButtonsContainer);
             this.panelPosts.Controls.Add(this.listBoxCommentsList);
             this.panelPosts.Controls.Add(this.textBoxStatus);
             this.panelPosts.Controls.Add(this.pictureBoxPostPhotoDisplay);
@@ -84,68 +84,16 @@ namespace BasicFacebookFeatures.Forms
             this.panelPosts.Size = new System.Drawing.Size(1481, 945);
             this.panelPosts.TabIndex = 1;
             // 
-            // groupBoxRadioButtonsContainer
+            // labelCoverPhoto
             // 
-            this.groupBoxRadioButtonsContainer.Controls.Add(this.buttonSortPosts);
-            this.groupBoxRadioButtonsContainer.Controls.Add(this.radioButtonSortByDate);
-            this.groupBoxRadioButtonsContainer.Controls.Add(this.radioButtonSortByLikes);
-            this.groupBoxRadioButtonsContainer.Controls.Add(this.radioButtonSortByComments);
-            this.groupBoxRadioButtonsContainer.Location = new System.Drawing.Point(623, 96);
-            this.groupBoxRadioButtonsContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBoxRadioButtonsContainer.Name = "groupBoxRadioButtonsContainer";
-            this.groupBoxRadioButtonsContainer.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBoxRadioButtonsContainer.Size = new System.Drawing.Size(248, 272);
-            this.groupBoxRadioButtonsContainer.TabIndex = 13;
-            this.groupBoxRadioButtonsContainer.TabStop = false;
-            this.groupBoxRadioButtonsContainer.Text = "Sort posts by";
-            // 
-            // buttonSortPosts
-            // 
-            this.buttonSortPosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSortPosts.Location = new System.Drawing.Point(74, 199);
-            this.buttonSortPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSortPosts.Name = "buttonSortPosts";
-            this.buttonSortPosts.Size = new System.Drawing.Size(163, 48);
-            this.buttonSortPosts.TabIndex = 12;
-            this.buttonSortPosts.Text = "Sort posts";
-            this.buttonSortPosts.UseVisualStyleBackColor = true;
-            this.buttonSortPosts.Click += new System.EventHandler(this.buttonSortPosts_Click);
-            // 
-            // radioButtonSortByDate
-            // 
-            this.radioButtonSortByDate.AutoSize = true;
-            this.radioButtonSortByDate.Checked = true;
-            this.radioButtonSortByDate.Location = new System.Drawing.Point(9, 33);
-            this.radioButtonSortByDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButtonSortByDate.Name = "radioButtonSortByDate";
-            this.radioButtonSortByDate.Size = new System.Drawing.Size(247, 29);
-            this.radioButtonSortByDate.TabIndex = 9;
-            this.radioButtonSortByDate.TabStop = true;
-            this.radioButtonSortByDate.Text = "Date posted (Default)";
-            this.radioButtonSortByDate.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByLikes
-            // 
-            this.radioButtonSortByLikes.AutoSize = true;
-            this.radioButtonSortByLikes.Location = new System.Drawing.Point(9, 73);
-            this.radioButtonSortByLikes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButtonSortByLikes.Name = "radioButtonSortByLikes";
-            this.radioButtonSortByLikes.Size = new System.Drawing.Size(148, 29);
-            this.radioButtonSortByLikes.TabIndex = 10;
-            this.radioButtonSortByLikes.Text = "Most Liked";
-            this.radioButtonSortByLikes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButtonSortByLikes.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByComments
-            // 
-            this.radioButtonSortByComments.AutoSize = true;
-            this.radioButtonSortByComments.Location = new System.Drawing.Point(9, 114);
-            this.radioButtonSortByComments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButtonSortByComments.Name = "radioButtonSortByComments";
-            this.radioButtonSortByComments.Size = new System.Drawing.Size(211, 29);
-            this.radioButtonSortByComments.TabIndex = 11;
-            this.radioButtonSortByComments.Text = "Most Commented";
-            this.radioButtonSortByComments.UseVisualStyleBackColor = true;
+            this.labelCoverPhoto.AutoSize = true;
+            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoverPhoto.Location = new System.Drawing.Point(871, 23);
+            this.labelCoverPhoto.Name = "labelCoverPhoto";
+            this.labelCoverPhoto.Size = new System.Drawing.Size(207, 39);
+            this.labelCoverPhoto.TabIndex = 14;
+            this.labelCoverPhoto.Text = "Post\'s photo";
+            this.labelCoverPhoto.Visible = false;
             // 
             // listBoxCommentsList
             // 
@@ -175,6 +123,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonPostNewStatus
             // 
+            this.buttonPostNewStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPostNewStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPostNewStatus.Location = new System.Drawing.Point(656, 722);
             this.buttonPostNewStatus.Name = "buttonPostNewStatus";
@@ -184,16 +133,32 @@ namespace BasicFacebookFeatures.Forms
             this.buttonPostNewStatus.UseVisualStyleBackColor = true;
             this.buttonPostNewStatus.Click += new System.EventHandler(this.buttonAddNewPost_Click);
             // 
-            // labelCoverPhoto
+            // labelFilter
             // 
-            this.labelCoverPhoto.AutoSize = true;
-            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoverPhoto.Location = new System.Drawing.Point(871, 23);
-            this.labelCoverPhoto.Name = "labelCoverPhoto";
-            this.labelCoverPhoto.Size = new System.Drawing.Size(302, 39);
-            this.labelCoverPhoto.TabIndex = 14;
-            this.labelCoverPhoto.Text = "Post\'s cover photo";
-            this.labelCoverPhoto.Visible = false;
+            this.labelFilter.AutoSize = true;
+            this.labelFilter.Location = new System.Drawing.Point(626, 96);
+            this.labelFilter.Name = "labelFilter";
+            this.labelFilter.Size = new System.Drawing.Size(175, 25);
+            this.labelFilter.TabIndex = 15;
+            this.labelFilter.Text = "Filter by keyword";
+            // 
+            // textBoxFilterByKeyword
+            // 
+            this.textBoxFilterByKeyword.Location = new System.Drawing.Point(631, 125);
+            this.textBoxFilterByKeyword.Multiline = true;
+            this.textBoxFilterByKeyword.Name = "textBoxFilterByKeyword";
+            this.textBoxFilterByKeyword.Size = new System.Drawing.Size(229, 44);
+            this.textBoxFilterByKeyword.TabIndex = 16;
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Location = new System.Drawing.Point(631, 175);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(229, 39);
+            this.buttonFilter.TabIndex = 17;
+            this.buttonFilter.Text = "Filter";
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // FormPosts
             // 
@@ -208,8 +173,6 @@ namespace BasicFacebookFeatures.Forms
             this.Load += new System.EventHandler(this.FormPosts_Load);
             this.panelPosts.ResumeLayout(false);
             this.panelPosts.PerformLayout();
-            this.groupBoxRadioButtonsContainer.ResumeLayout(false);
-            this.groupBoxRadioButtonsContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPostPhotoDisplay)).EndInit();
             this.ResumeLayout(false);
 
@@ -224,11 +187,9 @@ namespace BasicFacebookFeatures.Forms
         private System.Windows.Forms.PictureBox pictureBoxPostPhotoDisplay;
         private System.Windows.Forms.ListBox listBoxCommentsList;
         private System.Windows.Forms.TextBox textBoxStatus;
-        private System.Windows.Forms.GroupBox groupBoxRadioButtonsContainer;
-        private System.Windows.Forms.Button buttonSortPosts;
-        private System.Windows.Forms.RadioButton radioButtonSortByDate;
-        private System.Windows.Forms.RadioButton radioButtonSortByLikes;
-        private System.Windows.Forms.RadioButton radioButtonSortByComments;
         private System.Windows.Forms.Label labelCoverPhoto;
+        private System.Windows.Forms.Button buttonFilter;
+        private System.Windows.Forms.TextBox textBoxFilterByKeyword;
+        private System.Windows.Forms.Label labelFilter;
     }
 }

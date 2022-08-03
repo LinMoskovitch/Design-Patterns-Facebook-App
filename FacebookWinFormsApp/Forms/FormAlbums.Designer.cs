@@ -81,6 +81,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchAlbums
             // 
+            this.buttonFetchAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFetchAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchAlbums.Location = new System.Drawing.Point(110, 657);
             this.buttonFetchAlbums.Name = "buttonFetchAlbums";

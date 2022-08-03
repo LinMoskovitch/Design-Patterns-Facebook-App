@@ -30,10 +30,10 @@ namespace BasicFacebookFeatures.Forms
         private void InitializeComponent()
         {
             this.panelPages = new System.Windows.Forms.Panel();
+            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.listBoxPagesList = new System.Windows.Forms.ListBox();
             this.pictureBoxPagesCoverPhoto = new System.Windows.Forms.PictureBox();
             this.buttonFetchPages = new System.Windows.Forms.Button();
-            this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.panelPages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPagesCoverPhoto)).BeginInit();
             this.SuspendLayout();
@@ -44,11 +44,23 @@ namespace BasicFacebookFeatures.Forms
             this.panelPages.Controls.Add(this.listBoxPagesList);
             this.panelPages.Controls.Add(this.pictureBoxPagesCoverPhoto);
             this.panelPages.Controls.Add(this.buttonFetchPages);
+            this.panelPages.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPages.Location = new System.Drawing.Point(0, 0);
             this.panelPages.Name = "panelPages";
             this.panelPages.Size = new System.Drawing.Size(1481, 945);
             this.panelPages.TabIndex = 2;
+            // 
+            // labelCoverPhoto
+            // 
+            this.labelCoverPhoto.AutoSize = true;
+            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoverPhoto.Location = new System.Drawing.Point(762, 57);
+            this.labelCoverPhoto.Name = "labelCoverPhoto";
+            this.labelCoverPhoto.Size = new System.Drawing.Size(312, 39);
+            this.labelCoverPhoto.TabIndex = 5;
+            this.labelCoverPhoto.Text = "Page\'s cover photo";
+            this.labelCoverPhoto.Visible = false;
             // 
             // listBoxPagesList
             // 
@@ -70,6 +82,7 @@ namespace BasicFacebookFeatures.Forms
             // 
             // buttonFetchPages
             // 
+            this.buttonFetchPages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFetchPages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFetchPages.Location = new System.Drawing.Point(107, 661);
             this.buttonFetchPages.Name = "buttonFetchPages";
@@ -78,17 +91,6 @@ namespace BasicFacebookFeatures.Forms
             this.buttonFetchPages.Text = "Fetch pages";
             this.buttonFetchPages.UseVisualStyleBackColor = true;
             this.buttonFetchPages.Click += new System.EventHandler(this.buttonFetchPages_Click);
-            // 
-            // labelCoverPhoto
-            // 
-            this.labelCoverPhoto.AutoSize = true;
-            this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoverPhoto.Location = new System.Drawing.Point(762, 57);
-            this.labelCoverPhoto.Name = "labelCoverPhoto";
-            this.labelCoverPhoto.Size = new System.Drawing.Size(312, 39);
-            this.labelCoverPhoto.TabIndex = 5;
-            this.labelCoverPhoto.Text = "Page\'s cover photo";
-            this.labelCoverPhoto.Visible = false;
             // 
             // FormPages
             // 

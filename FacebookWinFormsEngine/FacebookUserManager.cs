@@ -10,7 +10,8 @@ namespace FacebookWinFormsEngine
     public class FacebookUserManager
     {
         private LoginResult m_LoginResult;
-        public User LoggedInUser { get; private set; }
+        public User LoggedInUser { get; private set; } = null;
+        public FacebookObjectCollection<Post> LoggedInUserPosts { get; private set; }
 
         public bool Login()
         {
@@ -32,7 +33,8 @@ namespace FacebookWinFormsEngine
                 "user_videos",
                 "groups_access_member_info",
                 "publish_to_groups",
-                "pages_manage_posts");
+                "pages_manage_posts",
+                "pages_read_user_content");
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
                 LoggedInUser = m_LoginResult.LoggedInUser;
@@ -48,6 +50,14 @@ namespace FacebookWinFormsEngine
         public void Logout()
         {
             FacebookService.Logout();
+        }
+
+        public void FetchPosts()
+        {
+            if(LoggedInUser != null)
+            {
+                LoggedInUserPosts = LoggedInUser.Posts;
+            }
         }
     }
 }
