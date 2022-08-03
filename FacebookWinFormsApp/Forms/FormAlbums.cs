@@ -54,5 +54,44 @@ namespace BasicFacebookFeatures.Forms
         {
             UIThemeColor.LoadTheme(panelAlbums);
         }
+
+        private void buttonSortAlbums_Click(object sender, EventArgs e)
+        {
+            List<Album> sortedAlbumsList;
+
+            if (listBoxAlbumsList.Items.Count != 0)
+            {
+                if (radioButtonSortByDate.Checked)
+                {
+                    sortedAlbumsList = listBoxAlbumsList.Items.Cast<Album>()
+                        .OrderByDescending(i_Album => i_Album.CreatedTime).ToList();
+                    listBoxAlbumsList.Items.Clear();
+                    foreach (Album album in sortedAlbumsList)
+                    {
+                        listBoxAlbumsList.Items.Add(album);
+                    }
+                }
+                else if (radioButtonSortByLikes.Checked)
+                {
+                    sortedAlbumsList = listBoxAlbumsList.Items.Cast<Album>()
+                        .OrderByDescending(i_Album => i_Album.LikedBy.Count).ToList();
+                    listBoxAlbumsList.Items.Clear();
+                    foreach (Album album in sortedAlbumsList)
+                    {
+                        listBoxAlbumsList.Items.Add(album);
+                    }
+                }
+                else
+                {
+                    sortedAlbumsList = listBoxAlbumsList.Items.Cast<Album>()
+                        .OrderByDescending(i_Album => i_Album.Comments.Count).ToList();
+                    listBoxAlbumsList.Items.Clear();
+                    foreach (Album album in sortedAlbumsList)
+                    {
+                        listBoxAlbumsList.Items.Add(album);
+                    }
+                }
+            }
+        }
     }
 }
