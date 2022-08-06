@@ -138,15 +138,17 @@ namespace BasicFacebookFeatures.Forms
         {
             string filterKeyword = textBoxFilterByKeyword.Text;
             listBoxPostsList.Items.Clear();
-
-            foreach (Post userPost in r_FacebookUserManager.LoggedInUserPosts)
+            if (r_FacebookUserManager.LoggedInUserPosts != null)
             {
-                if((userPost.Message != null && userPost.Message.Contains(filterKeyword)) ||
-                   (userPost.Description != null && userPost.Description.Contains(filterKeyword)) ||
-                   (userPost.Caption != null && userPost.Caption.Contains(filterKeyword)) || 
-                   filterKeyword == string.Empty)
+                foreach (Post userPost in r_FacebookUserManager.LoggedInUserPosts)
                 {
-                    listBoxPostsList.Items.Add(userPost);
+                    if ((userPost.Message != null && userPost.Message.Contains(filterKeyword)) ||
+                       (userPost.Description != null && userPost.Description.Contains(filterKeyword)) ||
+                       (userPost.Caption != null && userPost.Caption.Contains(filterKeyword)) ||
+                       filterKeyword == string.Empty)
+                    {
+                        listBoxPostsList.Items.Add(userPost);
+                    }
                 }
             }
         }

@@ -47,6 +47,9 @@ namespace BasicFacebookFeatures.Forms
             {
                 labelCoverPhoto.Visible = true;
                 pictureBoxAlbumsCoverPhoto.LoadAsync((listBoxAlbumsList.SelectedItem as Album)?.PictureAlbumURL);
+                labelDateCreated.Visible = true;
+                DateTime createdTime = (DateTime)(listBoxAlbumsList.SelectedItem as Album)?.CreatedTime;
+                textBoxDateCreated.Text = createdTime.ToString("d");
             }
         }
 
@@ -71,20 +74,10 @@ namespace BasicFacebookFeatures.Forms
                         listBoxAlbumsList.Items.Add(album);
                     }
                 }
-                else if (radioButtonSortByLikes.Checked)
+                else if (radioButtonSortByAmountOfPhotos.Created)
                 {
                     sortedAlbumsList = listBoxAlbumsList.Items.Cast<Album>()
-                        .OrderByDescending(i_Album => i_Album.LikedBy.Count).ToList();
-                    listBoxAlbumsList.Items.Clear();
-                    foreach (Album album in sortedAlbumsList)
-                    {
-                        listBoxAlbumsList.Items.Add(album);
-                    }
-                }
-                else
-                {
-                    sortedAlbumsList = listBoxAlbumsList.Items.Cast<Album>()
-                        .OrderByDescending(i_Album => i_Album.Comments.Count).ToList();
+                        .OrderByDescending(i_Album => i_Album.Photos.Count).ToList();
                     listBoxAlbumsList.Items.Clear();
                     foreach (Album album in sortedAlbumsList)
                     {

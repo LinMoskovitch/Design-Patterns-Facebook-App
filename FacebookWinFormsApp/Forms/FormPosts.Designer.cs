@@ -32,14 +32,14 @@ namespace BasicFacebookFeatures.Forms
             this.listBoxPostsList = new System.Windows.Forms.ListBox();
             this.buttonFetchPosts = new System.Windows.Forms.Button();
             this.panelPosts = new System.Windows.Forms.Panel();
+            this.buttonFilter = new System.Windows.Forms.Button();
+            this.textBoxFilterByKeyword = new System.Windows.Forms.TextBox();
+            this.labelFilter = new System.Windows.Forms.Label();
             this.labelCoverPhoto = new System.Windows.Forms.Label();
             this.listBoxCommentsList = new System.Windows.Forms.ListBox();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.pictureBoxPostPhotoDisplay = new System.Windows.Forms.PictureBox();
             this.buttonPostNewStatus = new System.Windows.Forms.Button();
-            this.labelFilter = new System.Windows.Forms.Label();
-            this.textBoxFilterByKeyword = new System.Windows.Forms.TextBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
             this.panelPosts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPostPhotoDisplay)).BeginInit();
             this.SuspendLayout();
@@ -47,10 +47,11 @@ namespace BasicFacebookFeatures.Forms
             // listBoxPostsList
             // 
             this.listBoxPostsList.FormattingEnabled = true;
-            this.listBoxPostsList.ItemHeight = 25;
-            this.listBoxPostsList.Location = new System.Drawing.Point(106, 96);
+            this.listBoxPostsList.ItemHeight = 16;
+            this.listBoxPostsList.Location = new System.Drawing.Point(71, 61);
+            this.listBoxPostsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxPostsList.Name = "listBoxPostsList";
-            this.listBoxPostsList.Size = new System.Drawing.Size(506, 204);
+            this.listBoxPostsList.Size = new System.Drawing.Size(339, 132);
             this.listBoxPostsList.TabIndex = 3;
             this.listBoxPostsList.SelectedValueChanged += new System.EventHandler(this.listBoxEventsList_SelectedValueChanged);
             // 
@@ -58,9 +59,10 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.buttonFetchPosts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFetchPosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFetchPosts.Location = new System.Drawing.Point(106, 573);
+            this.buttonFetchPosts.Location = new System.Drawing.Point(71, 367);
+            this.buttonFetchPosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonFetchPosts.Name = "buttonFetchPosts";
-            this.buttonFetchPosts.Size = new System.Drawing.Size(204, 80);
+            this.buttonFetchPosts.Size = new System.Drawing.Size(136, 51);
             this.buttonFetchPosts.TabIndex = 0;
             this.buttonFetchPosts.Text = "Fetch posts";
             this.buttonFetchPosts.UseVisualStyleBackColor = true;
@@ -80,17 +82,48 @@ namespace BasicFacebookFeatures.Forms
             this.panelPosts.Controls.Add(this.buttonFetchPosts);
             this.panelPosts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPosts.Location = new System.Drawing.Point(0, 0);
+            this.panelPosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelPosts.Name = "panelPosts";
-            this.panelPosts.Size = new System.Drawing.Size(1481, 945);
+            this.panelPosts.Size = new System.Drawing.Size(993, 620);
             this.panelPosts.TabIndex = 1;
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Location = new System.Drawing.Point(421, 112);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(153, 25);
+            this.buttonFilter.TabIndex = 17;
+            this.buttonFilter.Text = "Filter";
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
+            // textBoxFilterByKeyword
+            // 
+            this.textBoxFilterByKeyword.Location = new System.Drawing.Point(421, 80);
+            this.textBoxFilterByKeyword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFilterByKeyword.Name = "textBoxFilterByKeyword";
+            this.textBoxFilterByKeyword.Size = new System.Drawing.Size(154, 22);
+            this.textBoxFilterByKeyword.TabIndex = 16;
+            // 
+            // labelFilter
+            // 
+            this.labelFilter.AutoSize = true;
+            this.labelFilter.Location = new System.Drawing.Point(417, 61);
+            this.labelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFilter.Name = "labelFilter";
+            this.labelFilter.Size = new System.Drawing.Size(108, 16);
+            this.labelFilter.TabIndex = 15;
+            this.labelFilter.Text = "Filter by keyword";
             // 
             // labelCoverPhoto
             // 
             this.labelCoverPhoto.AutoSize = true;
             this.labelCoverPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoverPhoto.Location = new System.Drawing.Point(871, 23);
+            this.labelCoverPhoto.Location = new System.Drawing.Point(581, 15);
+            this.labelCoverPhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoverPhoto.Name = "labelCoverPhoto";
-            this.labelCoverPhoto.Size = new System.Drawing.Size(207, 39);
+            this.labelCoverPhoto.Size = new System.Drawing.Size(131, 26);
             this.labelCoverPhoto.TabIndex = 14;
             this.labelCoverPhoto.Text = "Post\'s photo";
             this.labelCoverPhoto.Visible = false;
@@ -98,26 +131,29 @@ namespace BasicFacebookFeatures.Forms
             // listBoxCommentsList
             // 
             this.listBoxCommentsList.FormattingEnabled = true;
-            this.listBoxCommentsList.ItemHeight = 25;
-            this.listBoxCommentsList.Location = new System.Drawing.Point(106, 346);
+            this.listBoxCommentsList.ItemHeight = 16;
+            this.listBoxCommentsList.Location = new System.Drawing.Point(71, 221);
+            this.listBoxCommentsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxCommentsList.Name = "listBoxCommentsList";
-            this.listBoxCommentsList.Size = new System.Drawing.Size(506, 204);
+            this.listBoxCommentsList.Size = new System.Drawing.Size(339, 132);
             this.listBoxCommentsList.TabIndex = 8;
             // 
             // textBoxStatus
             // 
-            this.textBoxStatus.Location = new System.Drawing.Point(106, 676);
+            this.textBoxStatus.Location = new System.Drawing.Point(71, 433);
+            this.textBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxStatus.Multiline = true;
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(527, 101);
+            this.textBoxStatus.Size = new System.Drawing.Size(353, 66);
             this.textBoxStatus.TabIndex = 7;
             this.textBoxStatus.TextChanged += new System.EventHandler(this.textBoxStatus_TextChanged);
             // 
             // pictureBoxPostPhotoDisplay
             // 
-            this.pictureBoxPostPhotoDisplay.Location = new System.Drawing.Point(878, 96);
+            this.pictureBoxPostPhotoDisplay.Location = new System.Drawing.Point(585, 61);
+            this.pictureBoxPostPhotoDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxPostPhotoDisplay.Name = "pictureBoxPostPhotoDisplay";
-            this.pictureBoxPostPhotoDisplay.Size = new System.Drawing.Size(482, 455);
+            this.pictureBoxPostPhotoDisplay.Size = new System.Drawing.Size(321, 291);
             this.pictureBoxPostPhotoDisplay.TabIndex = 6;
             this.pictureBoxPostPhotoDisplay.TabStop = false;
             // 
@@ -125,49 +161,24 @@ namespace BasicFacebookFeatures.Forms
             // 
             this.buttonPostNewStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPostNewStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPostNewStatus.Location = new System.Drawing.Point(656, 722);
+            this.buttonPostNewStatus.Location = new System.Drawing.Point(437, 462);
+            this.buttonPostNewStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPostNewStatus.Name = "buttonPostNewStatus";
-            this.buttonPostNewStatus.Size = new System.Drawing.Size(204, 55);
+            this.buttonPostNewStatus.Size = new System.Drawing.Size(136, 35);
             this.buttonPostNewStatus.TabIndex = 5;
             this.buttonPostNewStatus.Text = "Post a new status";
             this.buttonPostNewStatus.UseVisualStyleBackColor = true;
             this.buttonPostNewStatus.Click += new System.EventHandler(this.buttonAddNewPost_Click);
             // 
-            // labelFilter
-            // 
-            this.labelFilter.AutoSize = true;
-            this.labelFilter.Location = new System.Drawing.Point(626, 96);
-            this.labelFilter.Name = "labelFilter";
-            this.labelFilter.Size = new System.Drawing.Size(175, 25);
-            this.labelFilter.TabIndex = 15;
-            this.labelFilter.Text = "Filter by keyword";
-            // 
-            // textBoxFilterByKeyword
-            // 
-            this.textBoxFilterByKeyword.Location = new System.Drawing.Point(631, 125);
-            this.textBoxFilterByKeyword.Multiline = true;
-            this.textBoxFilterByKeyword.Name = "textBoxFilterByKeyword";
-            this.textBoxFilterByKeyword.Size = new System.Drawing.Size(229, 44);
-            this.textBoxFilterByKeyword.TabIndex = 16;
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Location = new System.Drawing.Point(631, 175);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(229, 39);
-            this.buttonFilter.TabIndex = 17;
-            this.buttonFilter.Text = "Filter";
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
-            // 
             // FormPosts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1481, 945);
+            this.ClientSize = new System.Drawing.Size(993, 620);
             this.Controls.Add(this.panelPosts);
-            this.MaximumSize = new System.Drawing.Size(1507, 1016);
-            this.MinimumSize = new System.Drawing.Size(1507, 1016);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1011, 667);
+            this.MinimumSize = new System.Drawing.Size(1011, 667);
             this.Name = "FormPosts";
             this.Text = "Posts";
             this.Load += new System.EventHandler(this.FormPosts_Load);
