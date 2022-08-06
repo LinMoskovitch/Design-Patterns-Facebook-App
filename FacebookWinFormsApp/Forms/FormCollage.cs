@@ -49,18 +49,10 @@ namespace BasicFacebookFeatures.Forms
         {
             int pictureIndex = 0;
             int selectedPhotosCount = 0;
-            PictureBox currentPictureBox;
             List<Photo> photosToCollage = new List<Photo>();
+            PictureBox currentPictureBox;
 
-            foreach (Control currentControl in panelCollageContainer.Controls)
-            {
-                if (currentControl.GetType() == typeof(PictureBox))
-                {
-                    currentPictureBox = (PictureBox)currentControl;
-                    currentPictureBox.Image = null;
-                }
-            }
-
+            clearPreviousCollage();
             if (listBoxPhotosList.SelectedItems.Count > 4)
             {
                 MessageBox.Show("You have selected more than 4 photos");
@@ -75,7 +67,7 @@ namespace BasicFacebookFeatures.Forms
 
                 foreach(Control currentControl in panelCollageContainer.Controls)
                 {
-                    if(pictureIndex < selectedPhotosCount && currentControl.GetType() == typeof(PictureBox))
+                    if (pictureIndex < selectedPhotosCount && currentControl.GetType() == typeof(PictureBox))
                     {
                         currentPictureBox = (PictureBox)currentControl;
                         currentPictureBox.Visible = true;
@@ -86,11 +78,24 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
+        private void clearPreviousCollage()
+        {
+            PictureBox currentPictureBox;
+
+            foreach (Control currentControl in panelCollageContainer.Controls)
+            {
+                if(currentControl.GetType() == typeof(PictureBox))
+                {
+                    currentPictureBox = (PictureBox)currentControl;
+                    currentPictureBox.Image = null;
+                }
+            }
+        }
+
         private void listBoxPhotosList_SelectedValueChanged(object sender, EventArgs e)
         {
             labelCurrentSelectedPhoto.Visible = true;
             pictureBoxSample.LoadAsync((listBoxPhotosList.SelectedItem as Photo)?.PictureNormalURL);
-
         }
 
         private void FormCollage_Load(object i_Sender, EventArgs e)

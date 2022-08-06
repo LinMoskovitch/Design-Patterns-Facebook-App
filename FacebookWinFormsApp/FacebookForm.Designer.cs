@@ -43,16 +43,16 @@ namespace BasicFacebookFeatures
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.labelProfileName = new System.Windows.Forms.Label();
+            this.pictureBoxCircleProfilePicture = new System.Windows.Forms.PictureBox();
             this.labelTitleBar = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.PictureBoxCentralLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCircleProfilePicture = new System.Windows.Forms.PictureBox();
-            this.labelProfileName = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCircleProfilePicture)).BeginInit();
             this.panelDesktopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCentralLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCircleProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // panelUserInfo
@@ -120,7 +120,7 @@ namespace BasicFacebookFeatures
             this.buttonCollage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCollage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCollage.UseVisualStyleBackColor = true;
-            this.buttonCollage.Click += new System.EventHandler(this.buttonFeature1_Click);
+            this.buttonCollage.Click += new System.EventHandler(this.buttonCollage_Click);
             // 
             // buttonPosts
             // 
@@ -268,6 +268,26 @@ namespace BasicFacebookFeatures
             this.panelTitleBar.Size = new System.Drawing.Size(1201, 142);
             this.panelTitleBar.TabIndex = 61;
             // 
+            // labelProfileName
+            // 
+            this.labelProfileName.AutoSize = true;
+            this.labelProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProfileName.Location = new System.Drawing.Point(1041, 66);
+            this.labelProfileName.Name = "labelProfileName";
+            this.labelProfileName.Size = new System.Drawing.Size(78, 36);
+            this.labelProfileName.TabIndex = 2;
+            this.labelProfileName.Text = "label";
+            this.labelProfileName.Visible = false;
+            // 
+            // pictureBoxCircleProfilePicture
+            // 
+            this.pictureBoxCircleProfilePicture.Location = new System.Drawing.Point(931, 40);
+            this.pictureBoxCircleProfilePicture.Name = "pictureBoxCircleProfilePicture";
+            this.pictureBoxCircleProfilePicture.Size = new System.Drawing.Size(84, 82);
+            this.pictureBoxCircleProfilePicture.TabIndex = 1;
+            this.pictureBoxCircleProfilePicture.TabStop = false;
+            this.pictureBoxCircleProfilePicture.Visible = false;
+            // 
             // labelTitleBar
             // 
             this.labelTitleBar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -302,26 +322,6 @@ namespace BasicFacebookFeatures
             this.PictureBoxCentralLogo.TabIndex = 0;
             this.PictureBoxCentralLogo.TabStop = false;
             // 
-            // pictureBoxCircleProfilePicture
-            // 
-            this.pictureBoxCircleProfilePicture.Location = new System.Drawing.Point(931, 40);
-            this.pictureBoxCircleProfilePicture.Name = "pictureBoxCircleProfilePicture";
-            this.pictureBoxCircleProfilePicture.Size = new System.Drawing.Size(84, 82);
-            this.pictureBoxCircleProfilePicture.TabIndex = 1;
-            this.pictureBoxCircleProfilePicture.TabStop = false;
-            this.pictureBoxCircleProfilePicture.Visible = false;
-            // 
-            // labelProfileName
-            // 
-            this.labelProfileName.AutoSize = true;
-            this.labelProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProfileName.Location = new System.Drawing.Point(1041, 66);
-            this.labelProfileName.Name = "labelProfileName";
-            this.labelProfileName.Size = new System.Drawing.Size(78, 36);
-            this.labelProfileName.TabIndex = 2;
-            this.labelProfileName.Text = "label";
-            this.labelProfileName.Visible = false;
-            // 
             // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -344,9 +344,9 @@ namespace BasicFacebookFeatures
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCircleProfilePicture)).EndInit();
             this.panelDesktopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCentralLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCircleProfilePicture)).EndInit();
             this.ResumeLayout(false);
 
         }

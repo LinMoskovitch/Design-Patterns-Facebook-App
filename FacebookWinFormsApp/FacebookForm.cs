@@ -173,7 +173,7 @@ namespace BasicFacebookFeatures
             openChildForm(new Forms.FormPosts(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonFeature1_Click(object i_Sender, EventArgs e)
+        private void buttonCollage_Click(object i_Sender, EventArgs e)
         {
             openChildForm(new Forms.FormCollage(r_FacebookUserManager), i_Sender);
         }

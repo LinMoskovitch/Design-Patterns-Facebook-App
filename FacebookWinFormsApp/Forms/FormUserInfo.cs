@@ -32,8 +32,6 @@ namespace BasicFacebookFeatures.Forms
             labelUserBirthDate.Text += r_FacebookUserManager.LoggedInUser.Birthday;
             pictureBoxUserInfoProfilePicture.Visible = true;
             pictureBoxUserInfoProfilePicture.LoadAsync(r_FacebookUserManager.LoggedInUser.PictureNormalURL);
-
-
         }
 
         private void FormUserInfo_Load(object sender, EventArgs e)

@@ -71,9 +71,9 @@ namespace BasicFacebookFeatures.Forms
             this.labelCurrentSelectedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurrentSelectedPhoto.Location = new System.Drawing.Point(326, 359);
             this.labelCurrentSelectedPhoto.Name = "labelCurrentSelectedPhoto";
-            this.labelCurrentSelectedPhoto.Size = new System.Drawing.Size(242, 39);
+            this.labelCurrentSelectedPhoto.Size = new System.Drawing.Size(247, 39);
             this.labelCurrentSelectedPhoto.TabIndex = 8;
-            this.labelCurrentSelectedPhoto.Text = "selected photo";
+            this.labelCurrentSelectedPhoto.Text = "Selected photo";
             this.labelCurrentSelectedPhoto.Visible = false;
             // 
             // pictureBoxSample
