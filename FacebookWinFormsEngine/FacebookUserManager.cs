@@ -148,7 +148,7 @@ namespace FacebookWinFormsEngine
                 LoggedInUserGroups = LoggedInUser.Groups;
             }
         }
-
+        
         public void FetchPages()
         {
             if (LoggedInUser != null)
