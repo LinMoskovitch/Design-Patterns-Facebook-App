@@ -31,7 +31,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAllPhotos()
         {
             listBoxPhotosList.Items.Clear();
-            foreach (Album userAlbum in r_FacebookUserManager.LoggedInUser.Albums)
+            foreach (Album userAlbum in r_FacebookUserManager.LoggedInUserAlbums)
             {
                 foreach(Photo userPhoto in userAlbum.Photos)
                 {

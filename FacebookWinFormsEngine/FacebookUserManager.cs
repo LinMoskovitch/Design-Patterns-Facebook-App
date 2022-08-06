@@ -10,8 +10,84 @@ namespace FacebookWinFormsEngine
     public class FacebookUserManager
     {
         private LoginResult m_LoginResult;
+        private FacebookObjectCollection<Post> m_LoggedInUserPosts = null;
+        private FacebookObjectCollection<Group> m_LoggedInUserGroups = null;
+        private FacebookObjectCollection<Page> m_LoggedInUserPages = null;
+        private FacebookObjectCollection<Album> m_LoggedInUserAlbums = null;
+
         public User LoggedInUser { get; private set; } = null;
-        public FacebookObjectCollection<Post> LoggedInUserPosts { get; private set; }
+
+
+        public FacebookObjectCollection<Post> LoggedInUserPosts 
+        {
+            get 
+            {
+                if (m_LoggedInUserPosts == null)
+                {
+                    FetchPosts();
+                }
+
+                return m_LoggedInUserPosts;
+            }
+
+            private set
+            {
+                m_LoggedInUserPosts = value;
+            }
+        }
+        public FacebookObjectCollection<Group> LoggedInUserGroups
+        {
+            get
+            {
+                if (m_LoggedInUserGroups == null)
+                {
+                    FetchGroups();
+                }
+
+                return m_LoggedInUserGroups;
+            }
+
+            private set
+            {
+                m_LoggedInUserGroups = value;
+            }
+        }
+
+        public FacebookObjectCollection<Page> LoggedInUserPages
+        {
+            get
+            {
+                if (m_LoggedInUserPages == null)
+                {
+                    FetchPages();
+                }
+
+                return m_LoggedInUserPages;
+            }
+
+            private set
+            {
+                m_LoggedInUserPages = value;
+            }
+        }
+
+        public FacebookObjectCollection<Album> LoggedInUserAlbums
+        {
+            get
+            {
+                if (m_LoggedInUserAlbums == null)
+                {
+                    FetchAlbums();
+                }
+
+                return m_LoggedInUserAlbums;
+            }
+
+            private set
+            {
+                m_LoggedInUserAlbums = value;
+            }
+        }
 
         public bool Login()
         {
@@ -50,6 +126,11 @@ namespace FacebookWinFormsEngine
         public void Logout()
         {
             FacebookService.Logout();
+            LoggedInUser = null;
+            LoggedInUserPosts = null;
+            LoggedInUserAlbums = null;
+            LoggedInUserGroups = null;
+            LoggedInUserPages = null;
         }
 
         public void FetchPosts()
@@ -58,6 +139,67 @@ namespace FacebookWinFormsEngine
             {
                 LoggedInUserPosts = LoggedInUser.Posts;
             }
+        }
+
+        public void FetchGroups()
+        {
+            if (LoggedInUser != null)
+            {
+                LoggedInUserGroups = LoggedInUser.Groups;
+            }
+        }
+
+        public void FetchPages()
+        {
+            if (LoggedInUser != null)
+            {
+                LoggedInUserPages = LoggedInUser.LikedPages;
+            }
+        }
+
+        public void FetchAlbums()
+        {
+            if (LoggedInUser != null)
+            {
+                LoggedInUserAlbums = LoggedInUser.Albums;
+            }
+        }
+
+        public Status PostStatus(String i_StatusMessage)
+        {
+            Status postedStatus = null;
+
+            if (LoggedInUser != null)
+            {
+                postedStatus = LoggedInUser.PostStatus(i_StatusMessage);
+            }
+            else
+            {
+                throw new Exception("No user is logged in");
+            }
+
+            return postedStatus;
+        }
+
+        public List<Post> FilterPostsByKeyword(string i_Keyword)
+        {
+            List<Post> filteredPosts = new List<Post>();
+
+            if (LoggedInUserPosts != null)
+            {
+                foreach (Post userPost in LoggedInUserPosts)
+                {
+                    if ((userPost.Message != null && userPost.Message.Contains(i_Keyword)) ||
+                       (userPost.Description != null && userPost.Description.Contains(i_Keyword)) ||
+                       (userPost.Caption != null && userPost.Caption.Contains(i_Keyword)) ||
+                       i_Keyword == string.Empty)
+                    {
+                        filteredPosts.Add(userPost);
+                    }
+                }
+            }
+
+            return filteredPosts;
         }
     }
 }

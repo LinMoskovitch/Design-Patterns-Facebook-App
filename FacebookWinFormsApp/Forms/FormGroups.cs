@@ -40,7 +40,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchGroups()
         {
             listBoxGroupsList.Items.Clear();
-            foreach (Group userGroup in r_FacebookUserManager.LoggedInUser.Groups)
+            foreach (Group userGroup in r_FacebookUserManager.LoggedInUserGroups)
             {
                 listBoxGroupsList.Items.Add(userGroup);
             }

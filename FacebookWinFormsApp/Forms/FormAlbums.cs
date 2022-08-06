@@ -30,7 +30,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAlbums()
         {
             listBoxAlbumsList.Items.Clear();
-            foreach(Album userAlbum in r_FacebookUserManager.LoggedInUser.Albums)
+            foreach(Album userAlbum in r_FacebookUserManager.LoggedInUserAlbums)
             {
                 listBoxAlbumsList.Items.Add(userAlbum);
             }

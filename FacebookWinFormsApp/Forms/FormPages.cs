@@ -39,7 +39,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchPages()
         {
             listBoxPagesList.Items.Clear();
-            foreach (Page userPage in r_FacebookUserManager.LoggedInUser.LikedPages)
+            foreach (Page userPage in r_FacebookUserManager.LoggedInUserPages)
             {
                 listBoxPagesList.Items.Add(userPage);
             }

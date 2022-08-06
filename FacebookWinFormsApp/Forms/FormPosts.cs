@@ -31,8 +31,6 @@ namespace BasicFacebookFeatures.Forms
         private void fetchPosts()
         {
             listBoxPostsList.Items.Clear();
-            r_FacebookUserManager.FetchPosts();
-
             foreach(Post userPost in r_FacebookUserManager.LoggedInUserPosts)
             {
                 listBoxPostsList.Items.Add(userPost);
@@ -76,7 +74,7 @@ namespace BasicFacebookFeatures.Forms
         {
             try
             {
-                Status postedStatus = r_FacebookUserManager.LoggedInUser.PostStatus(textBoxStatus.Text);
+                Status postedStatus = r_FacebookUserManager.PostStatus(textBoxStatus.Text);
                 MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
             }
             catch (Exception ex)
@@ -90,45 +88,6 @@ namespace BasicFacebookFeatures.Forms
             buttonPostNewStatus.Enabled = !textBoxStatus.Text.Equals(String.Empty);
         }
 
-        //private void buttonSortPosts_Click(object sender, EventArgs e)
-        //{
-        //    List<Post> sortedPostList;
-
-        //    if (listBoxPostsList.Items.Count != 0)
-        //    {
-        //        if (radioButtonSortByDate.Checked)
-        //        {
-        //            sortedPostList = listBoxPostsList.Items.Cast<Post>()
-        //                .OrderByDescending(i_Post => i_Post.CreatedTime).ToList();
-        //            listBoxPostsList.Items.Clear();
-        //            foreach (Post post in sortedPostList)
-        //            {
-        //                listBoxPostsList.Items.Add(post);
-        //            }
-        //        }
-        //        else if(radioButtonSortByLikes.Checked)
-        //        {
-        //            sortedPostList = listBoxPostsList.Items.Cast<Post>()
-        //                .OrderByDescending(i_Post => i_Post.LikedBy.Count).ToList();
-        //            listBoxPostsList.Items.Clear();
-        //            foreach (Post post in sortedPostList)
-        //            {
-        //                listBoxPostsList.Items.Add(post);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            sortedPostList = listBoxPostsList.Items.Cast<Post>()
-        //                .OrderByDescending(i_Post => i_Post.Comments.Count).ToList();
-        //            listBoxPostsList.Items.Clear();
-        //            foreach (Post post in sortedPostList)
-        //            {
-        //                listBoxPostsList.Items.Add(post);
-        //            }
-        //        }
-        //    }
-        //}
-
         private void FormPosts_Load(object sender, EventArgs e)
         {
             UIThemeColor.LoadTheme(panelPosts);
@@ -138,18 +97,10 @@ namespace BasicFacebookFeatures.Forms
         {
             string filterKeyword = textBoxFilterByKeyword.Text;
             listBoxPostsList.Items.Clear();
-            if (r_FacebookUserManager.LoggedInUserPosts != null)
+
+            foreach (Post post in r_FacebookUserManager.FilterPostsByKeyword(filterKeyword))
             {
-                foreach (Post userPost in r_FacebookUserManager.LoggedInUserPosts)
-                {
-                    if ((userPost.Message != null && userPost.Message.Contains(filterKeyword)) ||
-                       (userPost.Description != null && userPost.Description.Contains(filterKeyword)) ||
-                       (userPost.Caption != null && userPost.Caption.Contains(filterKeyword)) ||
-                       filterKeyword == string.Empty)
-                    {
-                        listBoxPostsList.Items.Add(userPost);
-                    }
-                }
+                listBoxPostsList.Items.Add(post);
             }
         }
     }
