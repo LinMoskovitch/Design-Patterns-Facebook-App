@@ -32,14 +32,14 @@ namespace BasicFacebookFeatures
 
         private Color selectThemeColor()
         {
-            int index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
+            int index = r_Random.Next(UIThemeColor.MenuColorsList.Count);
             while(m_RandomColorIndex == index)
             {
-                index = r_Random.Next(UIThemeColor.m_MenuColorsList.Count);
+                index = r_Random.Next(UIThemeColor.MenuColorsList.Count);
             }
 
             m_RandomColorIndex = index;
-            string color = UIThemeColor.m_MenuColorsList[index];
+            string color = UIThemeColor.MenuColorsList[index];
             return ColorTranslator.FromHtml(color);
         }
 
