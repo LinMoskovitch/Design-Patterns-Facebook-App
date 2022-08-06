@@ -127,16 +127,12 @@ namespace BasicFacebookFeatures
             buttonLogin.Enabled = i_IsEnable;
         }
 
-
         private void buttonLogout_Click(object i_Sender, EventArgs e)
         {
-            FacebookService.LogoutWithUI();
-            buttonLogin.Enabled = true;
-            setEnableApplicationOptions(!k_IsEnableOptions);
-            ActiveForm?.Close();
+            r_FacebookUserManager.Logout();
+            Close();
         }
 
-        
         private void openChildForm(Form i_ChildForm, object i_Sender)
         {
             m_ActiveForm?.Close();
