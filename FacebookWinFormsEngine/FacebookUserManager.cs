@@ -14,9 +14,7 @@ namespace FacebookWinFormsEngine
         private FacebookObjectCollection<Group> m_LoggedInUserGroups = null;
         private FacebookObjectCollection<Page> m_LoggedInUserPages = null;
         private FacebookObjectCollection<Album> m_LoggedInUserAlbums = null;
-
         public User LoggedInUser { get; private set; } = null;
-
 
         public FacebookObjectCollection<Post> LoggedInUserPosts 
         {
@@ -35,6 +33,7 @@ namespace FacebookWinFormsEngine
                 m_LoggedInUserPosts = value;
             }
         }
+
         public FacebookObjectCollection<Group> LoggedInUserGroups
         {
             get
@@ -111,14 +110,8 @@ namespace FacebookWinFormsEngine
                 "publish_to_groups",
                 "pages_manage_posts",
                 "pages_read_user_content");
-            if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
-            {
-                LoggedInUser = m_LoginResult.LoggedInUser;
-            }
-            else
-            {
-                LoggedInUser = null;
-            }
+
+            LoggedInUser = !string.IsNullOrEmpty(m_LoginResult.AccessToken) ? m_LoginResult.LoggedInUser : null;
 
             return LoggedInUser != null;
         }
@@ -165,18 +158,11 @@ namespace FacebookWinFormsEngine
             }
         }
 
-        public Status PostStatus(String i_StatusMessage)
+        public Status PostStatus(string i_StatusMessage)
         {
-            Status postedStatus = null;
-
-            if (LoggedInUser != null)
-            {
-                postedStatus = LoggedInUser.PostStatus(i_StatusMessage);
-            }
-            else
-            {
-                throw new Exception("No user is logged in");
-            }
+            Status postedStatus = LoggedInUser != null
+                                      ? LoggedInUser.PostStatus(i_StatusMessage)
+                                      : throw new Exception("No user is logged in");
 
             return postedStatus;
         }

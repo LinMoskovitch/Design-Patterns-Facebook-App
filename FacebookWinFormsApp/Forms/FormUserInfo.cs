@@ -34,7 +34,7 @@ namespace BasicFacebookFeatures.Forms
             pictureBoxUserInfoProfilePicture.LoadAsync(r_FacebookUserManager.LoggedInUser.PictureNormalURL);
         }
 
-        private void FormUserInfo_Load(object sender, EventArgs e)
+        private void FormUserInfo_Load(object i_Sender, EventArgs i_E)
         {
             UIThemeColor.LoadTheme(panelUserInfo);
         }

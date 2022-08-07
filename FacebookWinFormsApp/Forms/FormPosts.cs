@@ -23,7 +23,7 @@ namespace BasicFacebookFeatures.Forms
             InitializeComponent();
         }
 
-        private void buttonFetchPosts_Click(object i_Sender, EventArgs e)
+        private void buttonFetchPosts_Click(object i_Sender, EventArgs i_E)
         {
             fetchPosts();
         }
@@ -42,7 +42,7 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void listBoxEventsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        private void listBoxEventsList_SelectedValueChanged(object i_Sender, EventArgs i_E)
         {
             pictureBoxPostPhotoDisplay.Visible = false;
             listBoxCommentsList.Items.Clear();
@@ -56,7 +56,7 @@ namespace BasicFacebookFeatures.Forms
                     pictureBoxPostPhotoDisplay.LoadAsync(((Post)listBoxPostsList.SelectedItem)?.PictureURL);
                 }
 
-                if(((Post)listBoxPostsList.SelectedItem).Comments.Count != 0)
+                if(((Post)listBoxPostsList.SelectedItem)!.Comments.Count != 0)
                 {
                     foreach(Comment comment in ((Post)listBoxPostsList.SelectedItem).Comments)
                     {
@@ -70,7 +70,7 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void buttonAddNewPost_Click(object sender, EventArgs e)
+        private void buttonAddNewPost_Click(object i_Sender, EventArgs i_E)
         {
             try
             {
@@ -83,17 +83,17 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void textBoxStatus_TextChanged(object sender, EventArgs e)
+        private void textBoxStatus_TextChanged(object i_Sender, EventArgs i_E)
         {
-            buttonPostNewStatus.Enabled = !textBoxStatus.Text.Equals(String.Empty);
+            buttonPostNewStatus.Enabled = !textBoxStatus.Text.Equals(string.Empty);
         }
 
-        private void FormPosts_Load(object sender, EventArgs e)
+        private void FormPosts_Load(object i_Sender, EventArgs i_E)
         {
             UIThemeColor.LoadTheme(panelPosts);
         }
 
-        private void buttonFilter_Click(object sender, EventArgs e)
+        private void buttonFilter_Click(object i_Sender, EventArgs i_E)
         {
             string filterKeyword = textBoxFilterByKeyword.Text;
             listBoxPostsList.Items.Clear();

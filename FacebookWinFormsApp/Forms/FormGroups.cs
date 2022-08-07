@@ -23,17 +23,17 @@ namespace BasicFacebookFeatures.Forms
             r_FacebookUserManager = i_FacebookUserManager;
         }
 
-        private void buttonFetchGroups_Click(object i_Sender, EventArgs e)
+        private void buttonFetchGroups_Click(object i_Sender, EventArgs i_E)
         {
             fetchGroups();
         }
 
-        private void listBoxGroupsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        private void listBoxGroupsList_SelectedValueChanged(object i_Sender, EventArgs i_E)
         {
             if (listBoxGroupsList.Items.Count != 0)
             {
                 labelCoverPhoto.Visible = true;
-                pictureBoxGroupsCoverPhoto.LoadAsync((listBoxGroupsList.SelectedItem as Group)?.PictureNormalURL);
+                pictureBoxGroupsCoverPhoto.LoadAsync((listBoxGroupsList.SelectedItem as Group)?.PictureLargeURL);
             }
         }
 
@@ -51,7 +51,7 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void FormGroups_Load(object sender, EventArgs e)
+        private void FormGroups_Load(object i_Sender, EventArgs i_E)
         {
             UIThemeColor.LoadTheme(panelGroups);
         }

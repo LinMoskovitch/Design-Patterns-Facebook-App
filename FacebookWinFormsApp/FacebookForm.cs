@@ -40,6 +40,7 @@ namespace BasicFacebookFeatures
 
             m_RandomColorIndex = index;
             string color = UIThemeColor.MenuColorsList[index];
+
             return ColorTranslator.FromHtml(color);
         }
 
@@ -83,12 +84,8 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void buttonLogin_Click(object i_Sender, EventArgs e)
+        private void buttonLogin_Click(object i_Sender, EventArgs i_E)
         {
-            //Clipboard.SetText("design.patterns20cc"); /// the current password for Desig Patter
-            Clipboard.SetText("CagLyU9?BsQ2r?9"); /// Lin's current password
-
-
             if(r_FacebookUserManager.Login())
             {
                 buttonLogin.Enabled = false;
@@ -127,7 +124,7 @@ namespace BasicFacebookFeatures
             buttonLogin.Enabled = i_IsEnable;
         }
 
-        private void buttonLogout_Click(object i_Sender, EventArgs e)
+        private void buttonLogout_Click(object i_Sender, EventArgs i_E)
         {
             r_FacebookUserManager.Logout();
             Close();
@@ -148,32 +145,32 @@ namespace BasicFacebookFeatures
             labelTitleBar.Text = i_ChildForm.Text;
         }
 
-        private void buttonUserInfo_Click(object i_Sender, EventArgs e)
+        private void buttonUserInfo_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormUserInfo(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonAlbums_Click(object i_Sender, EventArgs e)
+        private void buttonAlbums_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormAlbums(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonGroups_Click(object i_Sender, EventArgs e)
+        private void buttonGroups_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormGroups(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonPages_Click(object i_Sender, EventArgs e)
+        private void buttonPages_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormPages(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonEvents_Click(object i_Sender, EventArgs e)
+        private void buttonEvents_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormPosts(r_FacebookUserManager), i_Sender);
         }
 
-        private void buttonCollage_Click(object i_Sender, EventArgs e)
+        private void buttonCollage_Click(object i_Sender, EventArgs i_E)
         {
             openChildForm(new Forms.FormCollage(r_FacebookUserManager), i_Sender);
         }

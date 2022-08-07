@@ -22,7 +22,7 @@ namespace BasicFacebookFeatures.Forms
             r_FacebookUserManager = i_FacebookUserManager;
         }
 
-        private void buttonFetchAlbums_Click(object i_Sender, EventArgs e)
+        private void buttonFetchAlbums_Click(object i_Sender, EventArgs i_E)
         {
             fetchAlbums();
         }
@@ -30,6 +30,7 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAlbums()
         {
             listBoxAlbumsList.Items.Clear();
+
             foreach(Album userAlbum in r_FacebookUserManager.LoggedInUserAlbums)
             {
                 listBoxAlbumsList.Items.Add(userAlbum);
@@ -41,24 +42,29 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void listBoxAlbumsList_SelectedValueChanged(object i_Sender, EventArgs e)
+        private void listBoxAlbumsList_SelectedValueChanged(object i_Sender, EventArgs i_E)
         {
             if(listBoxAlbumsList.Items.Count != 0)
             {
                 labelCoverPhoto.Visible = true;
                 pictureBoxAlbumsCoverPhoto.LoadAsync((listBoxAlbumsList.SelectedItem as Album)?.PictureAlbumURL);
                 labelDateCreated.Visible = true;
-                DateTime createdTime = (DateTime)(listBoxAlbumsList.SelectedItem as Album)?.CreatedTime;
-                textBoxDateCreated.Text = createdTime.ToString("d");
+                DateTime? dateTime = (listBoxAlbumsList.SelectedItem as Album)?.CreatedTime;
+
+                if(dateTime != null)
+                {
+                    DateTime createdTime = (DateTime)dateTime;
+                    textBoxDateCreated.Text = createdTime.ToString("d");
+                }
             }
         }
 
-        private void FormAlbums_Load(object i_Sender, EventArgs e)
+        private void FormAlbums_Load(object i_Sender, EventArgs i_E)
         {
             UIThemeColor.LoadTheme(panelAlbums);
         }
 
-        private void buttonSortAlbums_Click(object sender, EventArgs e)
+        private void buttonSortAlbums_Click(object i_Sender, EventArgs i_E)
         {
             List<Album> sortedAlbumsList;
 

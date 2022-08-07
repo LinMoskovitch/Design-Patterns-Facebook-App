@@ -77,7 +77,7 @@ namespace BasicFacebookFeatures
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(280, 945);
+            this.panelMenu.Size = new System.Drawing.Size(280, 949);
             this.panelMenu.TabIndex = 60;
             // 
             // buttonLogout
@@ -307,7 +307,7 @@ namespace BasicFacebookFeatures
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.Location = new System.Drawing.Point(280, 142);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(1201, 803);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1201, 807);
             this.panelDesktopPanel.TabIndex = 62;
             // 
             // PictureBoxCentralLogo
@@ -317,7 +317,7 @@ namespace BasicFacebookFeatures
             this.PictureBoxCentralLogo.Image = global::BasicFacebookFeatures.Properties.Resources.LEALON_logo;
             this.PictureBoxCentralLogo.Location = new System.Drawing.Point(0, 0);
             this.PictureBoxCentralLogo.Name = "PictureBoxCentralLogo";
-            this.PictureBoxCentralLogo.Size = new System.Drawing.Size(1201, 803);
+            this.PictureBoxCentralLogo.Size = new System.Drawing.Size(1201, 807);
             this.PictureBoxCentralLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PictureBoxCentralLogo.TabIndex = 0;
             this.PictureBoxCentralLogo.TabStop = false;
@@ -328,7 +328,7 @@ namespace BasicFacebookFeatures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1481, 945);
+            this.ClientSize = new System.Drawing.Size(1481, 949);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -336,8 +336,8 @@ namespace BasicFacebookFeatures
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.MaximumSize = new System.Drawing.Size(1507, 1016);
-            this.MinimumSize = new System.Drawing.Size(1507, 1016);
+            this.MaximumSize = new System.Drawing.Size(1507, 1020);
+            this.MinimumSize = new System.Drawing.Size(1507, 1020);
             this.Name = "FacebookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

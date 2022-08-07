@@ -18,12 +18,11 @@ namespace BasicFacebookFeatures.Forms
 
         public FormCollage(FacebookUserManager i_FacebookUserManager)
         {
-            
             InitializeComponent();
             r_FacebookUserManager = i_FacebookUserManager;
         }
 
-        private void buttonFetchPhotos_Click(object i_Sender, EventArgs e)
+        private void buttonFetchPhotos_Click(object i_Sender, EventArgs i_E)
         {
             fetchAllPhotos();
         }
@@ -45,7 +44,7 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void buttonMakeCollage_Click(object i_Sender, EventArgs e)
+        private void buttonMakeCollage_Click(object i_Sender, EventArgs i_E)
         {
             int pictureIndex = 0;
             int selectedPhotosCount = 0;
@@ -53,11 +52,7 @@ namespace BasicFacebookFeatures.Forms
             PictureBox currentPictureBox;
 
             clearPreviousCollage();
-            if (listBoxPhotosList.SelectedItems.Count > 4)
-            {
-                MessageBox.Show("You have selected more than 4 photos");
-            }
-            else
+            if(listBoxPhotosList.SelectedItems.Count <= 4)
             {
                 foreach(Photo currentSelectedPhoto in listBoxPhotosList.SelectedItems)
                 {
@@ -67,7 +62,7 @@ namespace BasicFacebookFeatures.Forms
 
                 foreach(Control currentControl in panelCollageContainer.Controls)
                 {
-                    if (pictureIndex < selectedPhotosCount && currentControl.GetType() == typeof(PictureBox))
+                    if(pictureIndex < selectedPhotosCount && currentControl.GetType() == typeof(PictureBox))
                     {
                         currentPictureBox = (PictureBox)currentControl;
                         currentPictureBox.Visible = true;
@@ -75,6 +70,10 @@ namespace BasicFacebookFeatures.Forms
                         pictureIndex++;
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("You have selected more than 4 photos");
             }
         }
 
@@ -92,13 +91,13 @@ namespace BasicFacebookFeatures.Forms
             }
         }
 
-        private void listBoxPhotosList_SelectedValueChanged(object sender, EventArgs e)
+        private void listBoxPhotosList_SelectedValueChanged(object i_Sender, EventArgs i_E)
         {
             labelCurrentSelectedPhoto.Visible = true;
             pictureBoxSample.LoadAsync((listBoxPhotosList.SelectedItem as Photo)?.PictureNormalURL);
         }
 
-        private void FormCollage_Load(object i_Sender, EventArgs e)
+        private void FormCollage_Load(object i_Sender, EventArgs i_E)
         {
             UIThemeColor.LoadTheme(panelCollage);
         }
