@@ -46,7 +46,6 @@ namespace BasicFacebookFeatures.Forms
         {
             pictureBoxPostPhotoDisplay.Visible = false;
             listBoxCommentsList.Items.Clear();
-
             if (listBoxPostsList.Items.Count != 0)
             {
                 if(((Post)listBoxPostsList.SelectedItem).Type.Equals(Post.eType.photo))
@@ -96,8 +95,8 @@ namespace BasicFacebookFeatures.Forms
         private void buttonFilter_Click(object i_Sender, EventArgs i_E)
         {
             string filterKeyword = textBoxFilterByKeyword.Text;
-            listBoxPostsList.Items.Clear();
 
+            listBoxPostsList.Items.Clear();
             foreach (Post post in r_FacebookUserManager.FilterPostsByKeyword(filterKeyword))
             {
                 listBoxPostsList.Items.Add(post);

@@ -30,7 +30,6 @@ namespace BasicFacebookFeatures.Forms
         private void fetchAlbums()
         {
             listBoxAlbumsList.Items.Clear();
-
             foreach(Album userAlbum in r_FacebookUserManager.LoggedInUserAlbums)
             {
                 listBoxAlbumsList.Items.Add(userAlbum);
@@ -44,16 +43,18 @@ namespace BasicFacebookFeatures.Forms
 
         private void listBoxAlbumsList_SelectedValueChanged(object i_Sender, EventArgs i_E)
         {
-            if(listBoxAlbumsList.Items.Count != 0)
+            DateTime? dateTime;
+            DateTime createdTime;
+
+            if (listBoxAlbumsList.Items.Count != 0)
             {
                 labelCoverPhoto.Visible = true;
                 pictureBoxAlbumsCoverPhoto.LoadAsync((listBoxAlbumsList.SelectedItem as Album)?.PictureAlbumURL);
                 labelDateCreated.Visible = true;
-                DateTime? dateTime = (listBoxAlbumsList.SelectedItem as Album)?.CreatedTime;
-
+                dateTime = (listBoxAlbumsList.SelectedItem as Album)?.CreatedTime;
                 if(dateTime != null)
                 {
-                    DateTime createdTime = (DateTime)dateTime;
+                    createdTime = (DateTime)dateTime;
                     textBoxDateCreated.Text = createdTime.ToString("d");
                 }
             }

@@ -25,7 +25,7 @@ namespace BasicFacebookFeatures
         public FacebookForm()
         {
             InitializeComponent();
-            FacebookWrapper.FacebookService.s_CollectionLimit = 100;
+            FacebookService.s_CollectionLimit = 100;
             r_Random = new Random();
             r_FacebookUserManager = new FacebookUserManager();
         }
@@ -33,24 +33,28 @@ namespace BasicFacebookFeatures
         private Color selectThemeColor()
         {
             int index = r_Random.Next(UIThemeColor.MenuColorsList.Count);
-            while(m_RandomColorIndex == index)
+            string color;
+
+            while (m_RandomColorIndex == index)
             {
                 index = r_Random.Next(UIThemeColor.MenuColorsList.Count);
             }
 
             m_RandomColorIndex = index;
-            string color = UIThemeColor.MenuColorsList[index];
+            color = UIThemeColor.MenuColorsList[index];
 
             return ColorTranslator.FromHtml(color);
         }
 
-        private void selectButton(object i_BtnSender)
+        private void selectButton(object i_ButtonSender)
         {
-            if(i_BtnSender != null && m_CurrentSelectedButton != (Button)i_BtnSender)
+            Color color;
+
+            if (i_ButtonSender != null && m_CurrentSelectedButton != (Button)i_ButtonSender)
             {
                 deselectButton();
-                Color color = selectThemeColor();
-                m_CurrentSelectedButton = (Button)i_BtnSender;
+                color = selectThemeColor();
+                m_CurrentSelectedButton = (Button)i_ButtonSender;
                 m_CurrentSelectedButton.BackColor = color;
                 m_CurrentSelectedButton.ForeColor = Color.White;
                 m_CurrentSelectedButton.Font = new System.Drawing.Font(

@@ -14,6 +14,7 @@ namespace FacebookWinFormsEngine
         private FacebookObjectCollection<Group> m_LoggedInUserGroups = null;
         private FacebookObjectCollection<Page> m_LoggedInUserPages = null;
         private FacebookObjectCollection<Album> m_LoggedInUserAlbums = null;
+
         public User LoggedInUser { get; private set; } = null;
 
         public FacebookObjectCollection<Post> LoggedInUserPosts 
@@ -110,7 +111,6 @@ namespace FacebookWinFormsEngine
                 "publish_to_groups",
                 "pages_manage_posts",
                 "pages_read_user_content");
-
             LoggedInUser = !string.IsNullOrEmpty(m_LoginResult.AccessToken) ? m_LoginResult.LoggedInUser : null;
 
             return LoggedInUser != null;

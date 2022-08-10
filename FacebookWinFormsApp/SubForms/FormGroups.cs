@@ -14,7 +14,6 @@ namespace BasicFacebookFeatures.Forms
 {
     public partial class FormGroups : Form
     {
-
         private readonly FacebookUserManager r_FacebookUserManager;
 
         public FormGroups(FacebookUserManager i_FacebookUserManager)
