@@ -98,40 +98,40 @@
     <Compile Include="FacebookForm.Designer.cs">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAlbums.cs">
+    <Compile Include="SubForms\FormAlbums.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAlbums.Designer.cs">
+    <Compile Include="SubForms\FormAlbums.Designer.cs">
       <DependentUpon>FormAlbums.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormPosts.cs">
+    <Compile Include="SubForms\FormPosts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormPosts.Designer.cs">
+    <Compile Include="SubForms\FormPosts.Designer.cs">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCollage.cs">
+    <Compile Include="SubForms\FormCollage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCollage.Designer.cs">
+    <Compile Include="SubForms\FormCollage.Designer.cs">
       <DependentUpon>FormCollage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormGroups.cs">
+    <Compile Include="SubForms\FormGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormGroups.Designer.cs">
+    <Compile Include="SubForms\FormGroups.Designer.cs">
       <DependentUpon>FormGroups.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormPages.cs">
+    <Compile Include="SubForms\FormPages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormPages.Designer.cs">
+    <Compile Include="SubForms\FormPages.Designer.cs">
       <DependentUpon>FormPages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormUserInfo.cs">
+    <Compile Include="SubForms\FormUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormUserInfo.Designer.cs">
+    <Compile Include="SubForms\FormUserInfo.Designer.cs">
       <DependentUpon>FormUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -140,22 +140,22 @@
     <EmbeddedResource Include="FacebookForm.resx">
       <DependentUpon>FacebookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAlbums.resx">
+    <EmbeddedResource Include="SubForms\FormAlbums.resx">
       <DependentUpon>FormAlbums.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormPosts.resx">
+    <EmbeddedResource Include="SubForms\FormPosts.resx">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCollage.resx">
+    <EmbeddedResource Include="SubForms\FormCollage.resx">
       <DependentUpon>FormCollage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormGroups.resx">
+    <EmbeddedResource Include="SubForms\FormGroups.resx">
       <DependentUpon>FormGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormPages.resx">
+    <EmbeddedResource Include="SubForms\FormPages.resx">
       <DependentUpon>FormPages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormUserInfo.resx">
+    <EmbeddedResource Include="SubForms\FormUserInfo.resx">
       <DependentUpon>FormUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
