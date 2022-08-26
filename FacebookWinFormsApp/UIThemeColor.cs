@@ -77,6 +77,7 @@ namespace BasicFacebookFeatures
                     currentButton.ForeColor = Color.White;
                     currentButton.FlatAppearance.BorderColor = UIThemeColor.SecondaryColor;
                 }
+
                 if (currentControl.GetType() == typeof(Label))
                 {
                     currentLabel = (Label)currentControl;
