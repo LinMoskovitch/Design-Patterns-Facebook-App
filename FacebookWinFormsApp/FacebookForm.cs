@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
-using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookWinFormsEngine;
 
@@ -15,11 +8,11 @@ namespace BasicFacebookFeatures
 {
     public partial class FacebookForm : Form
     {
-        private readonly FacebookUserManager r_FacebookUserManager;
         private const bool k_IsEnableOptions = true;
+        private readonly FacebookUserManager r_FacebookUserManager;
+        private readonly Random r_Random;
         private Form m_ActiveForm;
         private Button m_CurrentSelectedButton;
-        private readonly Random r_Random;
         private int m_RandomColorIndex;
 
         public FacebookForm()
@@ -60,13 +53,13 @@ namespace BasicFacebookFeatures
                 m_CurrentSelectedButton.Font = new System.Drawing.Font(
                     "Microsoft Sans Serif",
                     12.5F,
-                    System.Drawing.FontStyle.Regular,
-                    System.Drawing.GraphicsUnit.Point,
-                    ((byte)(0)));
+                    FontStyle.Regular,
+                    GraphicsUnit.Point,
+                    0);
                 panelTitleBar.BackColor = color;
                 panelLogo.BackColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
                 UIThemeColor.PrimaryColor = color;
-                UIThemeColor.SecondaryColor = UIThemeColor.ChangeColorBrightness(color, -0.3); ;
+                UIThemeColor.SecondaryColor = UIThemeColor.ChangeColorBrightness(color, -0.3);
             }
         }
 
@@ -81,9 +74,9 @@ namespace BasicFacebookFeatures
                     previousButton.Font = new System.Drawing.Font(
                         "Microsoft Sans Serif",
                         10F,
-                        System.Drawing.FontStyle.Regular,
-                        System.Drawing.GraphicsUnit.Point,
-                        ((byte)(0)));
+                        FontStyle.Regular,
+                        GraphicsUnit.Point,
+                        0);
                 }
             }
         }

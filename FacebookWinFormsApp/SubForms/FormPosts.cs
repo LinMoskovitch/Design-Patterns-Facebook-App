@@ -55,7 +55,7 @@ namespace BasicFacebookFeatures.Forms
                     pictureBoxPostPhotoDisplay.LoadAsync(((Post)listBoxPostsList.SelectedItem)?.PictureURL);
                 }
 
-                if(((Post)listBoxPostsList.SelectedItem)!.Comments.Count != 0)
+                if(((Post)listBoxPostsList.SelectedItem)?.Comments.Count != 0)
                 {
                     foreach(Comment comment in ((Post)listBoxPostsList.SelectedItem).Comments)
                     {
@@ -104,4 +104,3 @@ namespace BasicFacebookFeatures.Forms
         }
     }
 }
-

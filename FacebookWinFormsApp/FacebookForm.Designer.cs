@@ -2,7 +2,7 @@
 
 namespace BasicFacebookFeatures
 {
-    partial class FacebookForm
+    public partial class FacebookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -19,6 +19,7 @@ namespace BasicFacebookFeatures
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -371,4 +372,3 @@ namespace BasicFacebookFeatures
         private System.Windows.Forms.PictureBox pictureBoxCircleProfilePicture;
     }
 }
-

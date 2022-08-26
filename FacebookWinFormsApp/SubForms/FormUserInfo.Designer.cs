@@ -1,7 +1,6 @@
-﻿
-namespace BasicFacebookFeatures.Forms
+﻿namespace BasicFacebookFeatures.Forms
 {
-    partial class FormUserInfo
+    public partial class FormUserInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -18,6 +17,7 @@ namespace BasicFacebookFeatures.Forms
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
